@@ -44,13 +44,16 @@ Follow these steps to setup and run server:
   ```
 - Activate the just created virtual environment 
   ```js
-    source env/Scripts/activate
+    source my-env/Scripts/activate
   ```
-- Rename the `.env-example` file to `.env`. That's where you'd put all future environment variable/configs
+- Rename the `.env copy` file found in the `config` directory to `.env`. That's where you'd put all future environment variable/configs
 - Install all packages
   ```js
-    pip install requirements.txt
+    pip install -r requirements.txt
   ```
-- Create a table on your local myqsl DBMS called `auth_wiki`.
+- Download an SQL DBMS. I recommend you install and use (XAMPP)[https://www.apachefriends.org/download.html].
+- Run XAMPP as admin and start the `MySQL` service.
+- Open a browser tab and type in `http://localhost/phpmyadmin/` to open DBMS
+- Then create a database called `auth_wiki`.
 - Run migrations `python manage.py migrate`.
 - Run server `python manage.py runserver`.
