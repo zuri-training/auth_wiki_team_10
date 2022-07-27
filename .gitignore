@@ -1,0 +1,8 @@
+# Backend
+*my-env
+*.env
+*.sqlite3
+*__pycache__
+
+# Frontend
+*.vscode

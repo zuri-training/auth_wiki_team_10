@@ -1,0 +1,5 @@
+SECRET_KEY=django-insecure-2_@(r@88_dzt83wdfk9c=urndurpvz2paj#)kg8%xkmq!e4)5k
+
+DATABASE_NAME=auth_wiki
+DATABASE_USER=root
+DATABASE_PASSWORD=
