@@ -1,7 +1,6 @@
 # Auth Wiki Project
-Backend Server for Auth Wiki.
-
 # Team 10
+Codebase for Authe Wiki - Team 10
 <br>
 
 ## Overview
