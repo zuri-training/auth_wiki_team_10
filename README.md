@@ -1,4 +1,4 @@
-# Auth Wiki Project
+# Auth Wiki Project.
 # Team 10
 Codebase for Authe Wiki - Team 10
 <br>
