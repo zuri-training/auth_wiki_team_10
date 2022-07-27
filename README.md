@@ -44,7 +44,7 @@ Follow these steps to setup and run server:
   ```
 - Activate the just created virtual environment 
   ```js
-    source env/Scripts/activate
+    source my-env/Scripts/activate
   ```
 - Rename the `.env-example` file to `.env`. That's where you'd put all future environment variable/configs
 - Install all packages
