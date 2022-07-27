@@ -46,7 +46,7 @@ Follow these steps to setup and run server:
   ```js
     source my-env/Scripts/activate
   ```
-- Rename the `.env-example` file to `.env`. That's where you'd put all future environment variable/configs
+- Rename the `.env copy` file found in the `config` directory to `.env`. That's where you'd put all future environment variable/configs
 - Install all packages
   ```js
     pip install requirements.txt
