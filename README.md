@@ -49,7 +49,7 @@ Follow these steps to setup and run server:
 - Rename the `.env copy` file found in the `config` directory to `.env`. That's where you'd put all future environment variable/configs
 - Install all packages
   ```js
-    pip install requirements.txt
+    pip install -r requirements.txt
   ```
 - Create a table on your local myqsl DBMS called `auth_wiki`.
 - Run migrations `python manage.py migrate`.
