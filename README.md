@@ -54,6 +54,6 @@ Follow these steps to setup and run server:
 - Download an SQL DBMS. I recommend you install and use (XAMPP)[https://www.apachefriends.org/download.html].
 - Run XAMPP as admin and start the `MySQL` service.
 - Open a browser tab and type in `http://localhost/phpmyadmin/` to open DBMS
-- Then create a table called `auth_wiki`.
+- Then create a database called `auth_wiki`.
 - Run migrations `python manage.py migrate`.
 - Run server `python manage.py runserver`.
