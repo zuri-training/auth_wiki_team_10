@@ -1,40 +1,50 @@
 /*email validation*/
-var emailInput = document.getElementById("email")
-var errorMsg = document.querySelector(".help-email")
-var errorIcon = document.querySelector(".error-icon")
+var exclamation =document.getElementById("exclamation")
+var exclamation2 =document.getElementById("exclamation-2")
+var error = document.getElementById("error")
+var error2 = document.getElementById("error-2")
+var email = document.getElementById("email")
 var RegexMail =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-emailInput.addEventListener("input", () => {
-    if (emailInput.value.match(RegexMail)){
-        emailInput.style.borderColor = "green";
-        errorIcon.classList.remove("active")
-        errorMsg.classList.remove("active")
-    }
-    else{
-        emailInput.style.borderColor = "red";
-        errorIcon.classList.add("active")
-        errorMsg.classList.add("active")
-    }
+/*Password Validation*/
+var password = document.getElementById("password")
+
+const form = document.getElementById("form");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    validateInputs();
 })
 
-/*password validation*/
-var passwordInput = document.getElementById("password")
-var errorMsg2 = document.querySelector(".help-pass")
-var errorIcon2 = document.querySelector(".error-icon-2")
-var RegexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-passwordInput.addEventListener("input", () => {
-    if (passwordInput.value.match(RegexPass)){
-        passwordInput.style.borderColor = "green";
-        errorIcon2.classList.remove("active")
-        errorMsg2.classList.remove("active")
+function validateInputs(){
+    if (email.value.match(RegexMail)){
+        exclamation.style.visibility = "hidden"
+        email.style.borderColor = "#13FE2B"
+        error.style.visibility = "hidden"
+    }
+    else if(email.value === ""){
+        exclamation.style.visibility = "visible"
+        error.style.visibility = "visible"
+        email.style.borderColor = "red"
     }
     else{
-        passwordInput.style.borderColor = "red";
-        errorIcon2.classList.add("active")
-        errorMsg2.classList.add("active")
+        exclamation.style.visibility = "visible"
+        error.style.visibility = "visible"
+        email.style.borderColor = "red"
     }
-})
+
+    if (password.value.trim() === ""){
+        error2.style.visibility = "visible"
+        exclamation2.style.visibility = "visible"
+        password.style.borderColor = "red"
+    }
+    else{
+        exclamation2.style.visibility = "hidden"
+        error2.style.visibility = "hidden"
+        password.style.borderColor = "#13FE2B"
+    }
+}
 
 /*visisibility of password*/
 var show = document.getElementById("show")
@@ -43,16 +53,16 @@ var eye = document.querySelector(".eye")
 var noEye = document.querySelector(".eye-slash")
 
 show.addEventListener("click", () => {
-    if (passwordInput.type ="password"){
-        passwordInput.type = "text";
+    if (password.type ="password"){
+        password.type = "text";
         eye.classList.add("active")
         noEye.classList.add("active")
     }
 })
 
 hide.addEventListener("click", () => {
-    if(passwordInput.type = "password"){
-        passwordInput.type = "password";
+    if(password.type = "password"){
+        password.type = "password";
         eye.classList.remove("active")
         noEye.classList.remove("active")
     }

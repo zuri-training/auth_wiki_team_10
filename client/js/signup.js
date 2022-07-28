@@ -18,7 +18,7 @@ function validateInputs() {
   const password2Value = password2.value.trim();
 
   if (fullnameValue === "") {
-    setError(username, "fullname is required");
+    setError(fullname, "fullname is required");
   } else {
     setSuccess(fullname);
   }
