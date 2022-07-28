@@ -83,7 +83,7 @@ form .inputControl input::placeholder {
 }
 
 form .inputControl {
-  margin-top: 0.7rem;
+  margin-top: 1rem;
 }
 
 .terms__and__conditions {
@@ -161,6 +161,11 @@ form .inputControl {
   padding: 0.7 0;
   transition: all 0.2s ease;
 }
+
+.buttons__row #pwd a{
+  color: var(--black2);
+}
+
 .buttons__row #pwd:hover {
   background-color: var(--);
 }
@@ -179,11 +184,15 @@ form .inputControl {
   border-color: var(--danger);
 }
 
-.inputControl .error {
+.inputControl .error{
   color: var(--danger);
-  font-size: 10px;
+  font-size: 11px;
   height: 13px;
-  margin-left: 0;
+  margin-top: 5px;
+}
+
+#error, #error-2{
+  visibility: hidden;
 }
 
 .error__container{
@@ -204,18 +213,13 @@ form .inputControl {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-.error-icon, .error-icon-2{
-  width: 20px;
-  position: absolute;
-  z-index: 1;
-  left: 87.5%;
+  position: relative;
 }
 
 .eye, .eye-slash{
   width: 20px;
   position: absolute;
-  left: 89.5%;
+  left: 93%;
   cursor :pointer;
 }
 
@@ -231,14 +235,16 @@ form .inputControl {
   display: none;
 }
 
-.help-email, .help-pass, .error-icon, .error-icon-2{
-  display: none;
-}
-.help-email.active, .help-pass.active{
-  display: block;
+.forgotPassword{
+  float :right;
 }
 
-.error-icon.active, .error-icon-2.active{
-  display: block;
+.forgotPassword a{
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
 }
 
+.forgotPassword a:hover{
+  text-decoration: underline;
+}
