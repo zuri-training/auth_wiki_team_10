@@ -188,7 +188,6 @@ form .inputControl {
   color: var(--danger);
   font-size: 11px;
   height: 13px;
-  margin-top: 5px;
 }
 
 #error, #error-2{
@@ -199,9 +198,11 @@ form .inputControl {
   display: flex;
   justify-content: flex-start;
   gap: 1px;
+  margin-top: 3px;
   align-items: center;
 }
 .exclamation{
+  width: 14px;
   visibility: hidden;
 }
 
