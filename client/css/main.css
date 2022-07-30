@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
 
 /* COLOR VARIABLES */
 :root {  
@@ -13,6 +13,8 @@
   --danger: #E30000;
   --success: #13FE2B;
   --grey: #404246;
+
+  --hero-bg: #000A10;
   
 }
 

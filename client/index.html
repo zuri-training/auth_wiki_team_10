@@ -4,14 +4,142 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/index.css">
     <script src="script.js" defer></script>
-    <title>Document</title>
+    <title>Auth Wiki</title>
 </head>
 <body>
-<div class="container">
+    <section id="hero">
+
+    <!-- Navigation -->
+    <header>
+        <nav class="auth__nav">
+            <img src="../client/assets/images/logo.svg" alt="Logo" class="auth__logo">
+            <ul class="auth_nav__links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Tutorial</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+            <div class="button__container">
+                <button class="nav__btn login__btn">Login</button>
+                <button class="nav__btn signup__btn">Signup</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="input-group hero__search mb-3">
+        <span class="input-group-text" id="basic-addon1"><img src="../client/assets/images/searchIcon.svg" alt=""></span>
+        <input type="text" class="form-control" placeholder="Search Library" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <h1>A Library of Authentication Codes</h1>
+    <p id="hero__subtitle">Auth-wiki provides a comprehensive collection of authentication codes for developers. Extremely flexible and modular, Auth wiki codes can be dropped into any Express based Web application for use. </p>
+
+    <div class="input-group hero__waitlist mb-3">
+        <input type="text" class="form-control" placeholder="Enter Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">Get Started</span>
+    </div>
+
+    <div class="hero__flex">
+        <div class="hero__flex__item">
+            <h4>15k+</h4>
+            <p>MONTHLY VISITORS</p>
+        </div>
+        <div class="hero__flex__item">
+            <h4>500k+</h4>
+            <p>AUTHENTICATION CODES COPIED</p>
+        </div>
+        <div class="hero__flex__item">
+            <h4>2K5</h4>
+            <p>COMMUNITY MEMBERS</p>
+        </div>
+    </div>
+    </section>
+    <!-- End of Hero -->
+
+    <!-- Brands Section -->
+    <section id="brands">
+        <div class="auth__title">
+            <div class="left__title__img"><img src="../client/assets/images/sketch_title1.svg" alt=""></div>
+            <div class="right__title__img"><img src="../client/assets/images/sketch_title2.svg" alt=""></div>
+            <h3>Brands that Work with Us</h3>
+            <p>Meet our Collaborative Partners from across the World</p>
+        </div>
+
+        <div class="brand__images">
+            <img src="../client/assets/images/zuri.svg" alt="Zuri" class="brand__image">
+            <img src="../client/assets/images/Dropbox svg.svg" alt="Zuri" class="brand__image">
+            <img src="../client/assets/images/Slack - png.svg" alt="Zuri" class="brand__image">
+            <img src="../client/assets/images/github.svg" alt="Zuri" class="brand__image">
+        </div>
+    </section>
+    <!-- End of Brands -->
+
+    <!-- Why Choose Us -->
+    <section id="why__us">
+        <div class="auth__title">
+            <h3>Why Choose Auth-Wiki </h3>
+            <p>Auth-Wiki is specially designed as a home of authentication codes</p>
+        </div>
+
+        <div class="why__wrapper">
+            <div class="why__container">
+                <span>
+                    <img src="../client/assets/images/fluent_people-community-add-28-regular.svg" alt="">
+                </span>
+                <h5>Community</h5>
+                <p>Auth-wiki provides a community of developers and codes. 
+                    Interactions, comments and duplication.</p>
+            </div>
+            <img src="../client/assets/images/hrArrow.svg" alt="">
+            <div class="why__container">
+                <span>
+                    <img src="../client/assets/images/icon-park-outline_code-computer.svg" alt="">
+                </span>
+                <h5>Authentication Codes</h5>
+                <p>A variety of Authentication Codes to use for your projects or businesses, saves time and it is efficient.</p>
+            </div>
+            <img src="../client/assets/images/hrArrow.svg" alt="">
+            <div class="why__container">
+                <span>
+                    <img src="../client/assets/images/fa-solid_chalkboard-teacher.svg" alt="">
+                </span>
+                <h5>Quick Tutorials</h5>
+                <p>We accompany our Authentication Codes with a brief on how to implement them. It is beginner friendly and conscise.</p>
+            </div>
+        </div>
+        <div class="why__wrapper wrap2">
+            <div class="why__container">
+                <span>
+                    <img src="../client/assets/images/fluent_people-community-add-28-regular-1.svg" alt="">
+                </span>
+                <h5>Documentation</h5>
+                <p>The use, operation, maintenance of the authentication codes are listed and explained for easy use by the developers.</p>
+            </div>
+            <img src="../client/assets/images/hrArrow.svg" alt="">
+            <div class="why__container">
+                <span>
+                    <img src="../client/assets/images/fluent_people-community-add-28-regular-2.svg" alt="">
+                </span>
+                <h5>Languages</h5>
+                <p>Auth-Wiki provides Authentication codes for Php, Nodejs and Python. Considering Developers in that use one in three of those.</p>
+            </div>
+        </div>
+
+    </section>
+    
+    
+<!-- <div class="container">
     <button> <a href="/signup.html">Sign Up</a></button> <button> <a href="/login.html">Log in</a></button>
-</div>
+</div> -->
 </body>
 </html>
