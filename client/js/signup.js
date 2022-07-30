@@ -5,11 +5,30 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+form.addEventListener("submit", addUsers) 
 
-  validateInputs();
-});
+async function addUsers (e) {
+  e.preventDefault()
+
+  validateInputs()
+  let user = {
+    name: fullname.value,
+    email:email.value,
+    password: password.value,
+  }
+
+  const baseUrl = "http://localhost:8000"
+  try {
+    const response = await axios.post(`${baseUrl}/api/register`, user)
+    alert("Request successful!")
+  } catch (error) {
+    if (error.response) {
+      alert(error.reponse.status)
+    } else {
+      alert(error.message)
+    }
+  }
+}
 
 function validateInputs() {
   const fullnameValue = fullname.value.trim();

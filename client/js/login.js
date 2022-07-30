@@ -1,8 +1,39 @@
 /*email validation*/
-var emailInput = document.getElementById("email")
-var errorMsg = document.querySelector(".help-email")
-var errorIcon = document.querySelector(".error-icon")
-var RegexMail =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const emailInput = document.getElementById("email")
+const pwd = document.getElementById("password")
+const btn = document.getElementById("btn")
+const errorMsg = document.querySelector(".help-email")
+const errorIcon = document.querySelector(".error-icon")
+const RegexMail =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+btn.addEventListener("click", login)
+
+async function login (e) {
+  e.preventDefault()
+
+  let user = {
+    email:emailInput.value,
+    password: pwd.value,
+  }
+
+  const baseUrl = "http://localhost:8000"
+  try {
+    const response = await axios.post(`${baseUrl}/api/login`, user)
+    document.cookie = `jwt=${JSON.stringify(response.data.jwt)}`
+    console.log(response)
+    alert("Request successful!")
+
+    const response2 = await axios.get(`${baseUrl}/api/user`)
+    console.log(response2)
+  } catch (error) {
+    if (error.response) {
+      alert(error.reponse.status)
+    } else {
+      alert(error.message)
+    }
+  }
+}
+
 
 emailInput.addEventListener("input", () => {
     if (emailInput.value.match(RegexMail)){
@@ -16,6 +47,7 @@ emailInput.addEventListener("input", () => {
         errorMsg.classList.add("active")
     }
 })
+
 
 /*password validation*/
 var passwordInput = document.getElementById("password")
