@@ -68,10 +68,20 @@ header{
 
 .login__btn{
     background: none;
+    transition: all .3s;
+}
+
+.login__btn:hover{
+    background-color: var(--button-hover);
 }
 
 .signup__btn{
     background: var(--button-bg);
+    transition: all .3s;
+}
+
+.signup__btn:hover{
+    background-color: var(--button-hover);
 }
 
 /* End of Navigation */
