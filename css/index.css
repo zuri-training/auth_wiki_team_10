@@ -20,7 +20,7 @@ header{
 
 #hero{
     background-color: var(--hero-bg);
-    background-image: url(../assets/images/Union.svg);
+    background-image: url(./assets/images/Union.svg);
     height: auto;
     background-repeat: no-repeat;
     background-position: center;

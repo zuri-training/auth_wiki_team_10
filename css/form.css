@@ -1,7 +1,7 @@
 @import "main.css";
 
 .auth__container {
-  background-image: url(../assets/images/ellipse.png);
+  background-image: url(./assets/images/ellipse.png);
   background-repeat: no-repeat;
   background-position: 100% 0%;
   background-color: var(--whiteash);
@@ -16,7 +16,7 @@
 }
 
 .auth__container--left {
-  background-image: url(../assets/images/logo-auth.png);
+  background-image: url(./assets/images/logo-auth.png);
   background-repeat: no-repeat;
   background-position: 64px 20px;
   background-size: 119px 77px;
