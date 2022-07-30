@@ -23,16 +23,16 @@
           <div>
             <h2>Welcome Back...</h2>
             <p>Log in to continue</p>
-            <form id="form" action="">
+            <form id="form" action="./index.html">
 
               <div class="inputControl">
                 <label for="email">Email</label>
-                <div class="input">
-                  <input id="email" name="email" type="text" placeholder="example@gmail.com" />
-                  <img src="./assets/images/exclamation.png" alt="" class="error-icon">
-                </div>
-                <div class="error">
-                  <em class="help-email">Please enter a valid email</em>
+                <input id="email" name="email" type="email" placeholder="example@gmail.com" />
+                <div class="error__container">
+                  <div class="err">
+                    <img src="./assets/images/exclamation.png" alt="" class="exclamation" id="exclamation">
+                    <div class="error" id="error">Email is required</div>
+                  </div>
                 </div>
               </div>
 
@@ -40,12 +40,17 @@
                 <label for="password">Password</label>
                 <div class="input">
                   <input id="password" name="password" type="password" />
-                  <img src="./assets/images/exclamation.png" alt="" class="error-icon-2">
                   <img src="./assets/images/eye-fill.svg" alt="" id="show" class="eye">
                   <img src="./assets/images/eye-slash-fill.svg" id="hide" alt="" class="eye-slash">
                 </div>
-                <div class="error">
-                  <em class="help-pass">Minimum of eight characters, at least one uppercase letter, one lowercase letter, one number and one special character.</em>
+                <div class="error__container">
+                  <div class="err">
+                    <img src="./assets/images/exclamation.png" alt="" class="exclamation" id="exclamation-2">
+                    <div class="error" id="error-2">Password is required</div>
+                  </div>
+                  <div class="forgotPassword">
+                    <a href="./password.html">Forgot Password?</a>
+                  </div>
                 </div>
               </div>
 
@@ -57,13 +62,13 @@
               </div>
 
               <div class="buttons__row">
-                <button type="submit" id="btn">Sign in</button>
+                <button id="submit" type="submit">Log In</button>
 
                 <strong class="or">or</strong>
 
                 <button id="google">
                     <img src="./assets/images/google-icon.png" alt="google-icon" width="25px" height="25px">
-                     <span>Continue with Google</span> 
+                    <span>Continue with Google</span> 
                 </button>
 
                 <small
@@ -72,9 +77,8 @@
               </div>
             </form>
           </div>
-       </div>
+      </div>
     </div>
 
-    <script src="script.js"></script>
   </body>
 </html>
