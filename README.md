@@ -1,14 +1,14 @@
-# Auth Wiki Project.
+# Auth Wiki Project Backend.
 # Team 10
-Codebase for Authe Wiki - Team 10
+Backend codebase for Authe Wiki - Team 10
 <br>
 
 ## Overview
 In this project, we're building an Wiki Platform that has authentication codes that developers can download and use in their own projects. 
 
-### Directory Structure
+<!-- ### Directory Structure
 - ***Frontend:*** Frontend code is found in the `client` directory.
-- ***Backend:*** Backend code is found in the `server` directory.
+- ***Backend:*** Backend code is found in the `server` directory. -->
 
 ### Project Links
 
@@ -42,11 +42,11 @@ Follow these steps to setup and run server:
   ```js
     python -m venv my-env
   ```
-- Activate the just created virtual environment 
+- Activate the just created virtual environment (I'll recommend you run this code in a Git bash terminal. It won't work on windows) 
   ```js
     source my-env/Scripts/activate
   ```
-- Rename the `.env copy` file found in the `config` directory to `.env`. That's where you'd put all future environment variable/configs
+- Make a copy of the `.env examples` file found in the `config` directory. Rename that copy to `.env`. That's where you'd put all future environment variable/configs
 - Install all packages
   ```js
     pip install -r requirements.txt
