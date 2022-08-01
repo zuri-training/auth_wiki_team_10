@@ -1,14 +1,14 @@
 @import "main.css";
 
 .auth__container {
-  background-image: url(./assets/images/ellipse.png);
+  background-image: url(../assets/images/ellipse.png);
   background-repeat: no-repeat;
   background-position: 100% 0%;
   background-color: var(--whiteash);
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 100vh;
+  height: 100vh;
 }
 
 .auth__container.register {
@@ -16,17 +16,23 @@
 }
 
 .auth__container--left {
-  background-image: url(./assets/images/logo-auth.png);
+  background-image: url(../assets/images/logo-auth.png);
   background-repeat: no-repeat;
-  background-position: 64px 20px;
+  background-position: 5% 20px;
   background-size: 119px 77px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--form-bg);
   width: 50%;
-  height: 100vh;
+  height: 100%;
+  max-height: 100vh;
   border-radius: 0 30px 30px 0;
+  overflow-y: hidden;
+}
+
+.auth__container--left img{
+  width: 100%;
 }
 
 .auth__container--right {
@@ -35,26 +41,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 100vh;
+  margin: auto;
+  padding: 0 6%;
+  height: 100%;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   font-weight: 600;
   color: var(--black2);
-  line-height: 48.41px;
-  /* margin-bottom: 0.5rem; */
+  line-height: 2rem;
+  margin-bottom: 0.5rem; 
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--grey);
   line-height: 29.05px;
 }
 
 form {
-  width: 500px;
-  max-width: 100%;
+  width: 37vw;
+  margin: auto;
 }
 
 form label {
@@ -73,6 +81,7 @@ form .inputControl input {
   border: 1px solid #66686b;
   border-radius: 8px;
   outline: none;
+  position: relative;
   background-color: var(--white);
 }
 
@@ -161,6 +170,11 @@ form .inputControl {
   padding: 0.7 0;
   transition: all 0.2s ease;
 }
+
+.buttons__row #pwd a{
+  color: var(--black2);
+}
+
 .buttons__row #pwd:hover {
   background-color: var(--);
 }
@@ -179,20 +193,29 @@ form .inputControl {
   border-color: var(--danger);
 }
 
-.inputControl .error {
+.inputControl .error{
   color: var(--danger);
-  font-size: 10px;
+  font-size: 11px;
   height: 13px;
-  margin-left: 0;
+}
+
+#error, #error-2{
+  visibility: hidden;
 }
 
 .error__container{
   display: flex;
-  justify-content: flex-start;
-  gap: 1px;
+  justify-content: space-between;
+  margin-top: 2px;
   align-items: center;
 }
+.err{
+  display: flex;
+  justify-content: space-between;
+  gap: 1px;
+}
 .exclamation{
+  width: 14px;
   visibility: hidden;
 }
 
@@ -204,18 +227,13 @@ form .inputControl {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-.error-icon, .error-icon-2{
-  width: 20px;
-  position: absolute;
-  z-index: 1;
-  left: 87.5%;
+  position: relative;
 }
 
 .eye, .eye-slash{
   width: 20px;
   position: absolute;
-  left: 89.5%;
+  right:12px;
   cursor :pointer;
 }
 
@@ -231,14 +249,50 @@ form .inputControl {
   display: none;
 }
 
-.help-email, .help-pass, .error-icon, .error-icon-2{
-  display: none;
-}
-.help-email.active, .help-pass.active{
-  display: block;
+.forgotPassword{
+  float :right;
 }
 
-.error-icon.active, .error-icon-2.active{
-  display: block;
+.forgotPassword a{
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
 }
 
+.forgotPassword a:hover{
+  text-decoration: underline;
+}
+
+@media screen and  (max-width:700px) {
+  .auth__container--left{
+    display: none;
+  }
+  .auth__container--right{
+    width: 100%;
+    padding: 0 6%;
+  }
+  form{
+    width: 90vw;
+    margin: auto; 
+  }
+  form .inputControl input, form .inputControl .input input{
+    width: 100%;
+  }
+  h2{
+    color: var(--button-bg);
+  }
+  .buttons__row button{
+    font-size: 1.1rem;
+  }
+  .buttons__row #google {
+    color:var(--button-bg);
+    width: 90%;
+    margin: auto;
+  }
+  .buttons__row #reset{
+    margin-top: 100px;
+  }
+  #control{
+    margin-top: 50px;
+  }
+}

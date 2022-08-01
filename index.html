@@ -9,6 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/8dd4b16ac7.js" crossorigin="anonymous"></script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/index.css">
@@ -54,10 +57,12 @@
             <h4>15k+</h4>
             <p>MONTHLY VISITORS</p>
         </div>
+        <div class="auth__vl"></div>
         <div class="hero__flex__item">
             <h4>500k+</h4>
             <p>AUTHENTICATION CODES COPIED</p>
         </div>
+        <div class="auth__vl"></div>
         <div class="hero__flex__item">
             <h4>2K5</h4>
             <p>COMMUNITY MEMBERS</p>
@@ -85,8 +90,11 @@
     <!-- End of Brands -->
 
     <!-- Why Choose Us -->
+    <div class="black__bg">
+
     <section id="why__us">
         <div class="auth__title">
+            <div class="why__title__img"><img src="./assets/images/whyIcon.svg" alt=""></div>
             <h3>Why Choose Auth-Wiki </h3>
             <p>Auth-Wiki is specially designed as a home of authentication codes</p>
         </div>
@@ -136,6 +144,134 @@
         </div>
 
     </section>
+    </div>
+    <!-- End of Why -->
+
+    <!-- Auth Codes -->
+    <section id="auth__codes">
+        <div class="auth__title atc__2">
+            <h3 class="atc__title">Auth-Wiki Authentication Codes</h3>
+            <p>The Various authentication codes we have for Php, Nodejs and Phython Languages</p>
+        </div>
+
+        <div class="auth__title atc__2">
+            <h3 class="atc__title">Token-Based Authentication</h3>
+            <p id="atc__p">A protocol that generates encrypted security tokens. It enables users to verify their identity to websites, 
+                which then generates a unique encrypted authentication token...</p>
+
+            <div class="auth__flex atc__icons">
+                <span id="ath__file"><img src="./assets/images/akar-icons_copy.svg" alt="" class="authcode__img"> 1,500</span>
+                <span id="ath__fire"><img src="./assets/images/Fire.svg" alt="" class="authcode__img"> 1,500</span>
+                <span id="ath__comment"><img src="./assets/images/fa-regular_comments.svg" alt="" class="authcode__img"> 1,500</span>
+            </div>
+        </div>
+
+        <div id="authreadme__img">
+            <img src="./assets/images/authEdit.svg" alt="Auth ReadMe">
+            <div class="atc__nav">
+                <span id=""><img src="./assets/images/Frame 32.svg" alt="" class=""></span>
+                <span id=""><img src="./assets/images/Ellipse 34.svg" alt="" class=""></span>
+                <span id=""><img src="./assets/images/Ellipse 35.svg" alt="" class=""></span>
+            </div>
+            <div class="atc__nav atc__lang">
+                <span id=""><img src="./assets/images/Python Software Foundation - png.svg" alt="" class=""></span>
+                <span id=""><img src="./assets/images/Node.js - jpeg.svg" alt="" class=""></span>
+                <span id=""><img src="./assets/images/g3438.svg" alt="" class=""></span>
+            </div>
+
+            <div id="atc__arr_btn">
+                <img src="./assets/images/atc__arrow.svg" alt="">
+                <button onclick="location.href='./login.html'" class="nav__btn login__btn">See more details</button>
+            </div>
+        </div>
+
+    </section>
+    <!-- End of Auth Codes -->
+
+    <!-- Newsletter -->
+    <div class="black__bg">
+        <section id="newsletter">
+            <div id="auth__productivity">
+                <p>Get unlimited access to all of Auth-wiki features today, join the Community. </p>
+                <h2>Enhance your productivity, <span>Get started!</span></h2>
+                <button onclick="location.href='./signup.html'" class="nav__btn signup__btn">Sign up</button>
+            </div>
+
+            <div class="ath__subscribe">
+                <div class="auth__title atc__2">
+                    <h3 class="atc__title">Subscribe to our newsletter</h3>
+                    <p>Stay updated on our latest news. 
+                        We promise only valuable mails and 
+                        we will not spam you with unnecessaries.</p>
+                    <div class="input-group ath__waitlist mb-3">
+                        <input type="text" class="form-control" placeholder="Enter Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2">Get Started</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End of Newsletter -->
+
+    <!-- Footer -->
+    <footer>
+       <div class="footer__flex">
+        <div class="footer__about">
+            <img src="./assets/images/logo.svg" alt="Logo" class="auth__logo">
+            <p>Auth-wiki provides a comprehensive collection of authentication codes for developers. 
+                Extremely flexible and modular, Auth wiki codes can be dropped into any Express based Web application for use.
+            </p>
+            <div class="foot__icon">
+                <img src="./assets/images/Button.svg" alt="">
+                <span>Tel<br>
+                310-437-2766</span>
+            </div>
+            <div class="foot__icon">
+                <img src="./assets/images/Button-1.svg" alt="">
+                <span>Address<br>
+                    Lagos, Nigeria.</span>
+            </div>
+            <div class="foot__icon">
+                <img src="./assets/images/Button-2.svg" alt="">
+                <span>Fax<br>
+                    +1-212-9876543</span>
+            </div>
+        </div>
+
+        <div class="footer__about">
+            <h5>Contact Us</h5>
+            <p>We usually respond before 24 hours.</p>
+            <form action="">
+                <input type="text" placeholder="Name" name="" id="">
+                <input type="email" placeholder="E-mail" name="" id="">
+                <textarea name="" placeholder="Your Message" id="" cols="5" rows="3"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="footer__about">
+            <h5>Social Media</h5>
+            <p>Be the first one to know  about discounts, offers and events</p>
+            <div class="footer__social">
+                <img src="./assets/images/Mini Button.svg" alt="">
+                <img src="./assets/images/Mini Button-1.svg" alt="">
+                <img src="./assets/images/Mini Button-2.svg" alt="">
+                <img src="./assets/images/Mini Button-3.svg" alt="">
+            </div>
+        </div>
+       </div>
+       <div class="footer__links">
+        <ul>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Sitemap</a></li>
+            <li><a href="">Terms of Use</a></li>
+        </ul>
+        <p>© 2000-2022, All Rights Reserved.</p>
+       </div>
+    </footer>
+
     
     
 <!-- <div class="container">
