@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Auth Wiki Project Backend.
+# Team 10
+Backend codebase for Authe Wiki - Team 10
+<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+In this project, we're building an Wiki Platform that has authentication codes that developers can download and use in their own projects. 
 
-## Available Scripts
+<!-- ### Directory Structure
+- ***Frontend:*** Frontend code is found in the `client` directory.
+- ***Backend:*** Backend code is found in the `server` directory. -->
 
-In the project directory, you can run:
+### Project Links
 
-### `npm start`
+- Design Link - https://www.figma.com/file/rim5Uin1lkaLl0JD5rhcf5/Zuri-Project-File
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### How to contribute
+Follow these steps if you want to contribute to this project:
+- Fork the repository. Open your your terminal and clone the forked repo locally.
+- Navigate to the folder and open in your text editor
+- On your terminal, set upstream branch:
+  ```js
+    git remote add upstream https://github.com/zuri-training/auth_wiki_team_10.git
+  ```
+- Pull upstream: `git pull upstream dev`
+- Create a branch for the feauture you're working on `git checkout -b <feature-name>`
+- After making changes, stage all the changes you have made locally for a commit by running `git add <file-names>`
+- Commit your changes with a descriptive commit message `git commit -m "your commit message"`
+- Before you push to your changes always make sure that your branch is always up-to-date in other to avoid merge conflicts: `git pull upstream dev`
+- After making sure your branch is up-to-date, push the new changes to your new branch: `git push origin <your-current-branch-name>`
+- Create a pull request to the dev branch
+- ***DO NOT*** merge your PRs. They'll be reviewed and merged.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Server (backend) Setup and Installation
+Follow these steps to setup and run server:
+- Navigate into the `server` directory
+  ```js
+    cd auth_wiki_team_10/server
+  ```
+- Create a virtual environment 
+  ```js
+    python -m venv my-env
+  ```
+- Activate the just created virtual environment (I'll recommend you run this code in a Git bash terminal. It won't work on windows) 
+  ```js
+    source my-env/Scripts/activate
+  ```
+- Make a copy of the `.env examples` file found in the `config` directory. Rename that copy to `.env`. That's where you'd put all future environment variable/configs
+- Install all packages
+  ```js
+    pip install -r requirements.txt
+  ```
+- Download an SQL DBMS. I recommend you install and use (XAMPP)[https://www.apachefriends.org/download.html].
+- Run XAMPP as admin and start the `MySQL` service.
+- Open a browser tab and type in `http://localhost/phpmyadmin/` to open DBMS
+- Then create a database called `auth_wiki`.
+- Run migrations `python manage.py migrate`.
+- Run server `python manage.py runserver`.
