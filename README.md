@@ -1,6 +1,6 @@
-# Auth Wiki Project Backend.
+# Auth Wiki Project.
 # Team 10
-Backend codebase for Authe Wiki - Team 10
+Codebase for Authe Wiki - Team 10
 <br>
 
 ## Overview
@@ -13,11 +13,12 @@ In this project, we're building an Wiki Platform that has authentication codes t
 ### Project Links
 
 - Design Link - https://www.figma.com/file/rim5Uin1lkaLl0JD5rhcf5/Zuri-Project-File
+- Frontend - In the `/client` folder
 
 
 ### How to contribute
 Follow these steps if you want to contribute to this project:
-- Fork the repository. Open your your terminal and clone the forked repo locally.
+- Fork the repository. Open your terminal and clone the forked repo locally.
 - Navigate to the folder and open in your text editor
 - On your terminal, set upstream branch:
   ```js
@@ -34,11 +35,7 @@ Follow these steps if you want to contribute to this project:
 
 ### Server (backend) Setup and Installation
 Follow these steps to setup and run server:
-- Navigate into the `server` directory
-  ```js
-    cd auth_wiki_team_10/server
-  ```
-- Create a virtual environment 
+- In the root directory of this project, create a virtual environment 
   ```js
     python -m venv my-env
   ```
@@ -51,9 +48,14 @@ Follow these steps to setup and run server:
   ```js
     pip install -r requirements.txt
   ```
-- Download an SQL DBMS. I recommend you install and use (XAMPP)[https://www.apachefriends.org/download.html].
-- Run XAMPP as admin and start the `MySQL` service.
-- Open a browser tab and type in `http://localhost/phpmyadmin/` to open DBMS
-- Then create a database called `auth_wiki`.
+- Download and install (MongoDB)[https://www.mongodb.com/try/download/community].
+- Download (MongoDB Compass)[https://www.mongodb.com/try/download/compass].
+- If you're confused at this point, please checkout (this tutorial on how to download and setup Mongodb)[https://www.youtube.com/watch?v=FwMwO8pXfq0]
+- Watch this tutorial on (how to install and setup MongoDB Compass)[https://www.youtube.com/watch?v=ydXCcLAi5aU]
+- Then create a mongoDB database locally called `auth_wiki`.
 - Run migrations `python manage.py migrate`.
 - Run server `python manage.py runserver`.
+- ***NOTE:*** Whenever you install a new package to the project run 
+  ```js
+    pip freeze --local requirements.txt
+  ```
