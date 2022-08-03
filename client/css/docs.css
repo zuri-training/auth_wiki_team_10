@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+}
+#container {
+    width: 100%;
+    background-color: #EEEEEE;
+    height: 2500px;
+}
+header {
+    width: inherit;
+    height: 153px;
+    background-color: #000A10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 38px 0px;
+    gap: 90px;
+    height: 153px;
+    left: 64px;
+    margin-bottom: 120px;
+}
+header #logo {
+    width: 77px;
+}
+header #user-div {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 1px solid #00334F;
+}
+header a {
+    color: #858585;
+}
+header a:active {
+    color: #D9D9D9;
+    padding-bottom: 0.3rem;
+    border-bottom: 3px solid;
+    border-color: var(--button-bg)
+}
+header #search-div {
+    display: flex;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #858585;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+header #search-div #search-icon {
+    width: 20.58px;
+}
+header input {
+    width: 220px;
+    padding-left: 10px;
+    border: 0;
+    color: #858585;
+    background-color: transparent;
+    outline: 0;
+}
+main #getting-started {
+    width: inherit;
+    height: 70px;
+    margin-bottom: 104px;
+    text-align: center;
+}
+main #intro {
+    width: inherit;
+    height: 136px;
+    padding: 0 64px;
+    margin-bottom: 104px;
+}
+h3 {
+    margin-bottom: 16px;
+}
+.section {
+    width: inherit;
+    padding: 0 64px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 49.5px;
+}
+.b-bottom {
+    border-bottom: 3px solid;
+}
+#com-vector {
+    margin-bottom: 39.5px;
+}
+.div1 {
+    width: 55%;
+}
+.div2 {
+    width: 35%;
+}
+.flex {
+    display: flex;
+}
+.vector {
+    width: 22.5px;
+    margin-right: 19.75px;
+}
+.top {
+    padding-top: 46px;
+}
+.margin {
+    line-height: 33.6px;
+    color: #343434;
+}
+.link {
+    color: #00334F;
+}
+#signup {
+    width: inherit;
+    height: 604px;
+    border-top: .8px solid #AABBC4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+span {
+    color: #00334F;
+}
+h1 {
+    font-weight: 700;
+    font-size: 60px;  
+}
+#signup p {
+    margin-bottom: 24px;
+}
+#signup button {
+    height: 70px;
+    width: 230.5px;
+    border-radius: 10px;
+    padding: 35px, 60px, 35px, 60px;
+    background: #00334F;
+    border: 0;
+    margin-top: 85px;
+}
+#signup button a {
+    font-weight: 500;
+    font-size: 20px;
+    color: #D9D9D9;
+}
+footer {
+width: inherit;
+height: 622px;
+background: #000A10;
+padding-left: 194px;
+}
+footer{
+    background: var(--hero-bg);
+    padding: 2% 3%;
+}
+.footer__flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.footer__about{
+    flex: 33%;
+    margin: 3rem;
+}
+.footer__about h5{
+    color: var(--whiteash);
+}
+.footer__about p{
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    color: #858585;
+}
+.footer__about .auth__logo{
+    margin-bottom: 1.8rem;
+}
+.footer__about form{
+    display: flex;
+    flex-direction: column;
+}
+.footer__about form input{
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    margin-left: 0;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+}
+.footer__about form textarea{
+    border: 0;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    margin-left: 0;
+    outline: 0;
+    border-radius: 4px;
+}
+.footer__about form button{
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    margin-left: 0;
+    border-radius: 4px;
+    color: var(--white);
+    background: var(--button-bg);
+}
+.foot__icon{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem 0;
+}
+.foot__icon span{
+    font-size: 0.8rem;
+    color: #E3EBFD;
+}
+.foot__icon img{
+    width: 15%;
+    margin-right: 0.8rem;
+}
+.footer__social img{
+    width: 15%;
+    margin: 0.5rem;
+    margin-left: 0;
+}
+.footer__links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer__links ul{
+    display: flex;
+}
+.footer__links ul li a{
+    color: #858585;
+    padding: 0.6em;
+}
+.footer__links p{
+    color: #858585;
+}
