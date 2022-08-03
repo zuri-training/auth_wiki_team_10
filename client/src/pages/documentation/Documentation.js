@@ -5,7 +5,9 @@ const Documentation = () => {
   return (
     <div>
       <Navigation/>
-      Documentation</div>
+      Documentation
+      hello
+      </div>
   )
 }
 
