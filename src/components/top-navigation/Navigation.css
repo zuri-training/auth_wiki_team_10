@@ -1,0 +1,50 @@
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 2rem;
+}
+
+
+.navigation__left{
+  display: flex;
+  justify-content: space-between;
+  gap: 12rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navigation__left--links{
+    display: flex;
+    justify-content: space-between;
+    gap: 7rem;
+    margin-left: 5rem;
+}
+
+.navigation__left--links a{
+    color: var(--grey-font);
+    padding-bottom: 0.2rem;
+}
+
+.navigation__left--links a.active{
+    color: var(--white);
+    border-bottom: 3px solid var(--button-bg);
+}
+
+.navigation__right button#login{
+    
+    background: none;
+    
+}
+
+.navigation__right button#signup{
+    margin-left: 2rem ;
+    background-color: var(--button-bg);
+    transition: all .2s ease;
+}
+
+.navigation__right button#signup:hover{
+    background-color: var(--button-hover);
+    border: 2px solid var(--button-hover);
+}
+

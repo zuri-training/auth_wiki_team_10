@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* COLOR VARIABLES */
+:root { 
+  --primary-color: #000A10; 
+  --white: #ffffff;
+  --whiteash: #EEEEEE;
+  --form-bg: #002235;
+  --button-bg: rgba(0, 51, 79, 1);
+  --button-hover: #55778A;
+ 
+  --black: #050607;
+  --black2: #050607;
+  --danger: #E30000;
+  --success: #13FE2B;
+  --grey: #404246;
+  --grey-font: rgba(133, 133, 133, 1);
+
+  --hero-bg: #000A10;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* GLOBAL STYLES */
+
+body {
+  max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    background: var(--whiteash);
+
+}
+
+a{
+  color: var(--whiteash);
+  text-decoration: none;
+}
+
+button{
+    font-size: 1rem;
+    padding: 0.8rem 4rem;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: #eee;
+    border: 2px solid var(--button-bg);
+    cursor: pointer;
+}
+
+button:hover{
+  background-color: var(--button-hover);
+  border-color: var(--button-hover);
+}
+input{
+  outline: none;
+  border: none;
+  background: none;
+}
+
+input:focus{
+  border: none;
+}
+
+input::placeholder{
+  font-size: 1rem;
 }
