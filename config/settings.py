@@ -77,10 +77,17 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'djongo',
         'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASSWORD'),
+        # 'ENFORCE_SCHEMA': env('DATABASE_ENFORCE_SCHEMA'),
+        'CLIENT': {
+            'host': '127.0.0.1',
+            'port': 27017,
+            # 'username': 'db-username',
+            # 'password': 'password',
+            # 'authSource': 'db-name',
+            # 'authMechanism': 'SCRAM-SHA-1'
+        },
     }
 }
 
