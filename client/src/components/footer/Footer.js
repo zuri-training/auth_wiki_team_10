@@ -42,9 +42,10 @@ const Footer = () => {
         </div>
 
         <div className="footer__about">
-            <h5>Contact Us</h5>
-            <p>We usually respond before 24 hours.</p>
+            
             <form action="">
+                <h5>Contact Us</h5>
+                <p>We usually respond before 24 hours.</p>
                 <input type="text" placeholder="Name" name="" id="" style={{background: "white"}}/>
                 <input type="email" placeholder="E-mail" name="" id="" style={{background: "white"}}/>
                 <textarea name="" placeholder="Your Message" id="" cols="5" rows="3"></textarea>

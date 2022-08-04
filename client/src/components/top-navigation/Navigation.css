@@ -26,6 +26,9 @@
     padding-bottom: 0.2rem;
 }
 
+.navigation__left--links a:hover{
+    color: var(--white);
+}
 .navigation__left--links a.active{
     color: var(--white);
     border-bottom: 3px solid var(--button-bg);
