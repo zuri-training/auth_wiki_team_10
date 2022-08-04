@@ -168,7 +168,7 @@ const LandingPage = () => {
             unique encrypted authentication token...
           </p>
 
-          <div class="auth__flex atc__icons">
+          <div className="auth__flex atc__icons">
                 <span id="ath__file"><img src={Pages} alt="pages" className="authcode__img" /> 1,500</span>
                 <span id="ath__fire"><img src={Fire} alt="fire" className="authcode__img" /> 1,500</span>
                 <span id="ath__comment"><img src={Comments} alt="comments" className="authcode__img" /> 1,500</span>
