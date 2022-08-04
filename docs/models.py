@@ -19,9 +19,12 @@ class Block(models.Model):
 
 
 class Doc(models.Model):
-	id = models.ObjectIdField(primary_key=True)
-	title = models.CharField(max_length=255)
-	description = models.TextField()
-	owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
-	date_created = models.DateField(null=False, blank=False)
-	blocks = models.ArrayField(model_container=Block)
+    id = models.ObjectIdField(primary_key=True)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    date_created = models.DateTimeField(auto_now_add=True)
+    blocks = models.ArrayField(model_container=Block)
+
+    def __str__(self):
+        return self.title
