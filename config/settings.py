@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_yasg',
     'users',
+    'docs',
 ]
 
 MIDDLEWARE = [
@@ -140,6 +141,16 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
+}
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'BEARER': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+        }
+    }
 }
 
 STATICFILES_DIRS = [
