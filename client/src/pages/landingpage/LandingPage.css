@@ -33,15 +33,15 @@
 
 .hero_section h1{
     color: #eee;
-    font-size: 4rem;
+    font-size: 3.5rem;
+    font-weight: 700;
 }
 
 .hero_section .spark{
     position: relative;
-    top: 90px;
-    left: 520px;
+    top: 70px;
+    left: 450px;
 }
-
 .hero_section p{
     color: var(--grey-font);
     font-weight: 400;
@@ -310,6 +310,10 @@
     width: 40%;
 }
 
+#atc__arr_btn button{
+    background: transparent;
+    padding: 1rem 1.5rem;
+}
 .ath__waitlist{
     padding-top: 1rem;
 }
