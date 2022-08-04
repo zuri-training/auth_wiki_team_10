@@ -1,5 +1,9 @@
-import React from 'react'
+import { React, useContext } from "react";
 import { Link } from 'react-router-dom'
+
+//Context
+import AuthContext from "../../context/AuthContext";
+
 
 //CSS File
 import './Forms.css'
@@ -11,7 +15,20 @@ import OfficeDesk from '../../assets/images/office-desk.png'
 import EyeFill from '../../assets/svgs/eye-fill.svg'
 import EyeSlash from '../../assets/svgs/eye-slash-fill.svg'
 
-const login = () => {
+
+
+
+
+
+const Login = () => {
+    const { loginUser } = useContext(AuthContext);
+  const handleSubmit = e => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    email.length > 0 && loginUser(email, password);
+  };
+
   return (
     <div className='auth__container'>
       <div className="auth__container--left">
@@ -22,7 +39,7 @@ const login = () => {
           <div>
             <h2>Welcome Back...</h2>
             <p>Log in to continue</p>
-            <form id="form" action="./index.html">
+            <form id="form" onSubmit={handleSubmit}>
 
               <div className="inputControl">
                 <label for="email">Email</label>
@@ -80,4 +97,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login
