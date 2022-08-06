@@ -73,7 +73,7 @@
 
 /* media queries */
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 1100px){
     .navigation__left--links,
     .navigation__right button#signup{
         display: none;
@@ -118,5 +118,15 @@
 
     .navigation__container__mobile--links--none{
         display: none;
+    }
+}
+
+
+@media screen and (max-width: 1340px){
+    .navigation__left--links{
+        margin-left: 0;
+    }
+    .navigation__right button{
+        padding: 1rem 1.5rem;
     }
 }

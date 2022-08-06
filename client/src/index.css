@@ -73,3 +73,50 @@ input:focus{
 input::placeholder{
   font-size: 1rem;
 }
+
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.25rem;
+    border-radius: 5px;
+}
+
+.errmsg > img{
+  margin-right: 0.25rem;
+}
+
+.instructions {
+    font-size: 0.7rem;
+    border-radius: 0.5rem;
+    background: rgba(241, 113, 113, 0.4);
+    color: var(--danger);
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+}
+
+.instructions > img {
+   margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}

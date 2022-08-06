@@ -27,7 +27,6 @@
   width: 50%;
   height: 100%;
   max-height: 100vh;
-  border-radius: 0 30px 30px 0;
   overflow-y: hidden;
 }
 
@@ -199,6 +198,18 @@ form .inputControl {
   height: 13px;
 }
 
+#signup__button,
+.login__button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#signup__button:disabled{
+  background-color: var(--button-hover);
+  cursor: not-allowed;
+}
+
 #error, #error-2{
   visibility: hidden;
 }
@@ -286,7 +297,7 @@ form .inputControl {
   }
   .buttons__row #google {
     color:var(--button-bg);
-    width: 90%;
+    width: 100%;
     margin: auto;
   }
   .buttons__row #reset{
