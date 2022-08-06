@@ -4,20 +4,20 @@ import {
   Entity,
   ObjectID,
   ObjectIdColumn,
-} from 'typeorm';
+} from "typeorm";
 
-@Entity('users')
+@Entity("users")
 export class User {
   @ObjectIdColumn()
   id: ObjectID;
 
-  @Column({ default: '' })
+  @Column({ default: "" })
   name: string;
 
-  @Column({ default: '' })
+  @Column({ default: "" })
   email: string;
 
-  @Column({ default: '' })
+  @Column({ default: "" })
   password: string;
 
   @CreateDateColumn()

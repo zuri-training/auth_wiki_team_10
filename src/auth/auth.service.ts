@@ -1,14 +1,14 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { MongoRepository, ObjectID } from 'typeorm';
-import * as bcrypt from 'bcrypt';
-import { RegisterDto } from './dto/register.dto';
-import { User } from './user.entity';
-import { LoginDto } from './dto/login-in.dto';
-import { JwtService } from '@nestjs/jwt';
-import LoginResponseDto from './dto/login-response.dto';
-import { IJwtPayload } from './interfaces/i-jwt.payload';
-import { RefreshToken } from './refresh-token.entity';
+import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
+import { InjectRepository } from "@nestjs/typeorm";
+import { MongoRepository, ObjectID } from "typeorm";
+import * as bcrypt from "bcrypt";
+import { RegisterDto } from "./dto/register.dto";
+import { User } from "./user.entity";
+import { LoginDto } from "./dto/login-in.dto";
+import { JwtService } from "@nestjs/jwt";
+import LoginResponseDto from "./dto/login-response.dto";
+import { IJwtPayload } from "./interfaces/i-jwt.payload";
+import { RefreshToken } from "./refresh-token.entity";
 
 @Injectable()
 export class AuthService {
@@ -25,7 +25,7 @@ export class AuthService {
       where: { email: dto.email },
     });
     if (existingUser) {
-      throw new HttpException('Email already taken', HttpStatus.BAD_REQUEST);
+      throw new HttpException("Email already taken", HttpStatus.BAD_REQUEST);
     }
 
     const password = bcrypt.hashSync(dto.password, 10);
@@ -41,13 +41,13 @@ export class AuthService {
     });
     if (!user) {
       throw new HttpException(
-        'Invalid log in credentials',
+        "Invalid log in credentials",
         HttpStatus.UNAUTHORIZED,
       );
     }
     if (!bcrypt.compareSync(dto.password, user.password)) {
       throw new HttpException(
-        'Invalid log in credentials',
+        "Invalid log in credentials",
         HttpStatus.UNAUTHORIZED,
       );
     }
@@ -71,7 +71,7 @@ export class AuthService {
       token: refreshToken,
     });
     if (!tk) {
-      throw new HttpException('Invalid refresh token', HttpStatus.UNAUTHORIZED);
+      throw new HttpException("Invalid refresh token", HttpStatus.UNAUTHORIZED);
     }
     let payloadObj;
     try {
@@ -80,7 +80,7 @@ export class AuthService {
       });
     } catch (e) {
       throw new HttpException(
-        'Refresh token expired. Log in again',
+        "Refresh token expired. Log in again",
         HttpStatus.UNAUTHORIZED,
       );
     }
@@ -89,7 +89,7 @@ export class AuthService {
       await this.refreshTokenRepository.findOneAndDelete({
         token: refreshToken,
       });
-      throw new HttpException('Invalid refresh token', HttpStatus.UNAUTHORIZED);
+      throw new HttpException("Invalid refresh token", HttpStatus.UNAUTHORIZED);
     }
     const payload = <IJwtPayload>{
       id: user.id,
@@ -117,7 +117,7 @@ export class AuthService {
     };
     const tokenString = this.jwtService.sign(payload, {
       secret: process.env.JWT_SECRET,
-      expiresIn: '2d',
+      expiresIn: "2d",
     });
     const token = new RefreshToken(tokenString, user);
     await this.refreshTokenRepository.save(token);

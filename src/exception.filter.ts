@@ -5,7 +5,7 @@ import {
   HttpException,
   HttpStatus,
   Logger,
-} from '@nestjs/common';
+} from "@nestjs/common";
 
 @Catch()
 export class AllExceptionsFilter implements ExceptionFilter {
@@ -26,8 +26,8 @@ export class AllExceptionsFilter implements ExceptionFilter {
     const exceptionResponse = exception.response;
     let code =
       status === HttpStatus.INTERNAL_SERVER_ERROR
-        ? 'general_internal_server_error'
-        : 'general_validation_error';
+        ? "general_internal_server_error"
+        : "general_validation_error";
     let message = exceptionResponse?.message;
     // our custom exception
 

@@ -1,5 +1,5 @@
-import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm';
-import { User } from './user.entity';
+import { Column, Entity, ObjectID, ObjectIdColumn } from "typeorm";
+import { User } from "./user.entity";
 
 @Entity()
 export class RefreshToken {
@@ -7,7 +7,7 @@ export class RefreshToken {
   id: ObjectID;
 
   @Column({
-    default: '',
+    default: "",
   })
   token: string;
 
