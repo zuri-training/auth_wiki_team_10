@@ -39,8 +39,8 @@ import Footer from "../../components/footer/Footer";
 const LandingPage = () => {
   return (
     <div className="landingpage">
+       <Navigation />
       <section className="hero_section">
-        <Navigation />
         <form className="form_search">
           <img src={Search} alt="search" />
           <input type="text" placeholder="Search Library" />

@@ -10,6 +10,7 @@
     background-color: var(--primary-color);
     height: 100vh;
     text-align: center;
+    padding-top: 7rem;
 }
 
 .form_search{
@@ -19,9 +20,9 @@
     width: 500px;
     height: 2.5rem;
     margin: 4rem auto 0;
-   padding: 0.8rem;
-   border-radius: 5px;
-   border: 1px solid var(--grey-font);
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid var(--grey-font);
 }
 
 .form_search input{
