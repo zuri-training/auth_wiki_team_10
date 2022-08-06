@@ -4,6 +4,7 @@
 
 ### How to install and run
 - Make a copy of the `.env copy` file and rename the copy to `.env`
+- Run your MongoDB Server
 - In the root of this folder, install all dependencies:
   ```js
     npm i
