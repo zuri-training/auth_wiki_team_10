@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {AiOutlineClose} from 'react-icons/ai'
+import AuthContext from "../../context/AuthProvider";
 
 import "./Navigation.css";
 
@@ -10,10 +11,10 @@ import Logo from "../../assets/images/logo-auth.png"
 
 //components
 import UserInfo from '../userInfo/UserInfo'
-import AuthContext from "../../context/AuthContext";
+import user from '../../context/AuthProvider'
 
 const Navigation = () => {
-  const { user, logoutUser } = useContext(AuthContext);
+ const { user, logoutUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false)
 
   const showNav = () => {

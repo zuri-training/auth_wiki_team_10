@@ -30,16 +30,10 @@ import Nodejs from "../../assets/svgs/Node.js - jpeg.svg";
 import Php from "../../assets/svgs/g3438.svg";
 import Arrow2 from "../../assets/svgs/atc__arrow.svg";
 
-//Components
-import Navigation from "../../components/top-navigation/Navigation";
-import Footer from "../../components/footer/Footer";
-
-
-
 const LandingPage = () => {
   return (
     <div className="landingpage">
-       <Navigation />
+      
       <section className="hero_section">
         <form className="form_search">
           <img src={Search} alt="search" />
@@ -242,7 +236,7 @@ const LandingPage = () => {
 
     {/* End of newsletter */}
 
-    <Footer />
+   
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Routes, Route, useLocation} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import LandingPage from './landingpage/LandingPage';
 import Signup from './forms/Signup'
 import Login from './forms/Login'
@@ -10,10 +10,9 @@ import MainDocumentation from './detailedDocs/MainDocumentation';
 import Community from './community/Community';
 
 const Pages = () => {
-    const location = useLocation();
   return (
     <div>
-        <Routes location={location} key={location.pathname}>
+        <Routes>
             <Route path='/' element = {< LandingPage />} />
             <Route path='/signup' element = { <Signup/> } />
             <Route path='/login' element = { <Login/> } />
