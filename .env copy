@@ -1,0 +1,6 @@
+MONGODB_CONNECTION_STRING=mongodb://localhost:27017/authWikiTeam10
+MONGODB_LIVE_CONNECTION_STRING=mongodb+srv://auth_wiki_team10:auth_wiki_team10@cluster0.96g0xco.mongodb.net/?retryWrites=true&w=majority
+MONGODB_DATABASE=authWiikiNest
+PORT=5000
+
+JWT_SECRET=my-jwt-super-secret-to-keep-away-from-everyone
