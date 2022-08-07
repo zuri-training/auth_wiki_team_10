@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'users',
     'docs',
+    'newsletter',
 ]
 
 MIDDLEWARE = [
