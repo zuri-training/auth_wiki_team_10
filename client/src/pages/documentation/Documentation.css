@@ -1,14 +1,13 @@
 #docs__container{
     background-color: var(--whiteash);
-    
+    min-height: 2rem;
 }
 
 main #getting-started {
     width: inherit;
-    height: 70px;
-    margin-bottom: 104px;
+    margin-top: 7rem;
     text-align: center;
-    padding: 5rem 0;
+    padding: 5rem 0 0;
 }
 
 main #getting-started h1{

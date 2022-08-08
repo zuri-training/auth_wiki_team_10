@@ -21,7 +21,7 @@ import EyeSlash from '../../assets/svgs/eye-slash-fill.svg'
 
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext);
+    const { errMsg, loginUser } = useContext(AuthContext);
   const handleSubmit = e => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -32,17 +32,18 @@ const Login = () => {
   return (
     <div className='auth__container'>
       <div className="auth__container--left">
-        <img src={OfficeDesk} alt="office desk" class="office-desk"/>
+        <img src={OfficeDesk} alt="office desk" className="office-desk"/>
         </div>
 
         <div className="auth__container--right">
           <div>
             <h2>Welcome Back...</h2>
             <p>Log in to continue</p>
+            {errMsg && <span>{errMsg}</span> }
             <form id="form" onSubmit={handleSubmit}>
 
               <div className="inputControl">
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input id="email" name="email" type="email" placeholder="example@gmail.com" />
                 <div className="error__container">
                   <div className="err">
@@ -53,7 +54,7 @@ const Login = () => {
               </div>
 
               <div className="inputControl">
-                <label for="password">Password</label>
+                <label htmlFor="password">Password</label>
                 <div className="input">
                   <input id="password" name="password" type="password" />
                   <img src={EyeFill} alt="eye-fill" id="show" className="eye" />

@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import AuthContext from '../../context/AuthContext'
 
-const UserInfo = ({ user }) => {
+const UserInfo = ( ) => {
+  const { user, logoutUser} = useContext(AuthContext)
+  
   return (
     <div>
-       Welcome, {user.fullname}
+      <span style={{color:"white"}}>Welcome, {user.name}</span>
+       <button onClick={logoutUser}>Logout</button>
     </div>
   )
 }
