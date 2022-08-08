@@ -1,5 +1,9 @@
-import React from 'react'
+import { React, useContext } from "react";
 import { Link } from 'react-router-dom'
+
+//Context
+import AuthContext from "../../context/AuthContext";
+
 
 //CSS File
 import './Forms.css'
@@ -11,21 +15,35 @@ import OfficeDesk from '../../assets/images/office-desk.png'
 import EyeFill from '../../assets/svgs/eye-fill.svg'
 import EyeSlash from '../../assets/svgs/eye-slash-fill.svg'
 
-const login = () => {
+
+
+
+
+
+const Login = () => {
+    const { errMsg, loginUser } = useContext(AuthContext);
+  const handleSubmit = e => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    email.length > 0 && loginUser(email, password);
+  };
+
   return (
     <div className='auth__container'>
       <div className="auth__container--left">
-        <img src={OfficeDesk} alt="office desk" class="office-desk"/>
+        <img src={OfficeDesk} alt="office desk" className="office-desk"/>
         </div>
 
         <div className="auth__container--right">
           <div>
             <h2>Welcome Back...</h2>
             <p>Log in to continue</p>
-            <form id="form" action="./index.html">
+            {errMsg && <span>{errMsg}</span> }
+            <form id="form" onSubmit={handleSubmit}>
 
               <div className="inputControl">
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input id="email" name="email" type="email" placeholder="example@gmail.com" />
                 <div className="error__container">
                   <div className="err">
@@ -36,7 +54,7 @@ const login = () => {
               </div>
 
               <div className="inputControl">
-                <label for="password">Password</label>
+                <label htmlFor="password">Password</label>
                 <div className="input">
                   <input id="password" name="password" type="password" />
                   <img src={EyeFill} alt="eye-fill" id="show" className="eye" />
@@ -80,4 +98,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login

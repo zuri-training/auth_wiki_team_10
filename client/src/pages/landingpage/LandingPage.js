@@ -30,9 +30,7 @@ import Nodejs from "../../assets/svgs/Node.js - jpeg.svg";
 import Php from "../../assets/svgs/g3438.svg";
 import Arrow2 from "../../assets/svgs/atc__arrow.svg";
 
-//Components
-import Navigation from "../../components/top-navigation/Navigation";
-import Footer from "../../components/footer/Footer";
+
 
 
 
@@ -40,7 +38,6 @@ const LandingPage = () => {
   return (
     <div className="landingpage">
       <section className="hero_section">
-        <Navigation />
         <form className="form_search">
           <img src={Search} alt="search" />
           <input type="text" placeholder="Search Library" />
@@ -168,7 +165,7 @@ const LandingPage = () => {
             unique encrypted authentication token...
           </p>
 
-          <div class="auth__flex atc__icons">
+          <div className="auth__flex atc__icons">
                 <span id="ath__file"><img src={Pages} alt="pages" className="authcode__img" /> 1,500</span>
                 <span id="ath__fire"><img src={Fire} alt="fire" className="authcode__img" /> 1,500</span>
                 <span id="ath__comment"><img src={Comments} alt="comments" className="authcode__img" /> 1,500</span>
@@ -240,9 +237,7 @@ const LandingPage = () => {
         </section>
     </div>
 
-    {/* End of newsletter */}
-
-    <Footer />
+    {/* End of newsletter */} 
     </div>
   );
 };
