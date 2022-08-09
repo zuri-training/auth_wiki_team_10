@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import Heading from './api-components/Heading'
+import Paragraph from './api-components/Paragraph'
+import Image from './api-components/Image'
+import Comments from './api-components/Comments'
+import CommentForm from './api-components/CommentForm'
+import DocsReaction from './api-components/DocsReaction'
 
 
 const DetailedDocs = () => {
@@ -40,8 +46,25 @@ const DetailedDocs = () => {
     <div style={{marginTop:"10rem"}}>
       {isLoading ? (<div>Loading resources...</div>) : (
         <>
-          <h1>{detailedDocs.title}</h1> 
-          <h1>{detailedDocs.blocks.map((bloc) => bloc.content)}</h1>
+         <h1>{detailedDocs.title}</h1>
+         <p>{detailedDocs.description}</p>
+         <small>BY {detailedDocs.author.name}</small>
+          {detailedDocs.blocks.map((bloc, index) => {
+            //  <div key={index}>
+               if(bloc.type === "heading") return  <Heading content={bloc.content} key={index}/>
+               else if(bloc.type === "paragraph") return <Paragraph content={bloc.content} key={index} />
+               else if(bloc.type === "image") return <Image content ={bloc.content} key={index} />
+            //  </div>           
+          })}
+          
+         <DocsReaction likes={detailedDocs.likes} dislikes={detailedDocs.disLikes} />
+          <CommentForm docId={detailedDocs.id} />
+
+          {detailedDocs.comments.map((comment) => {
+            return (
+              <Comments key={comment.id} content={comment}/>
+            )
+          })}
         </> 
       )}
     </div>
