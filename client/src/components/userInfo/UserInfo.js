@@ -3,10 +3,10 @@ import AuthContext from '../../context/AuthContext'
 
 const UserInfo = ( ) => {
   const { user, logoutUser} = useContext(AuthContext)
-  
+  console.log(user)
   return (
     <div>
-      <span style={{color:"white"}}>Welcome, {user.name}</span>
+      <span style={{color:"white"}}>Hello, {user.email} </span>
        <button onClick={logoutUser}>Logout</button>
     </div>
   )

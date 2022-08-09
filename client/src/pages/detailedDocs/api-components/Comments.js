@@ -1,13 +1,20 @@
 import React from 'react'
-import Likes from '../../../assets/images/view.png'
+import Likes from '../../../assets/images/like.png'
+import Dislikes from '../../../assets/images/dislike.png'
+import Delete from '../../../assets/images/delete.png'
 
-const Comments = ({content}) => {
+const Comments = ({ content }) => {
   return (
-    <div>
-        <p>{content.createdAt}</p>
-        <p>{content.message}</p>
-        <p>{content.author.name}</p>
+    <div className='comment'>
+      <div className="head"><strong>{content.author.name}</strong> <small>{content.createdAt}</small></div>
+      <p>{content.message}</p>
+      <div className="reactions">
         <img src={Likes} alt="likeIcon" />
+        <img src={Dislikes} alt="dislikeIcon" />
+        <img src={Delete} alt="DeleteIcon" /> <br /> <br /> <br />
+      </div>
+
+
     </div>
   )
 }

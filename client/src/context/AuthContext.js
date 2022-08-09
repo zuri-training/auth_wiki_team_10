@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
 
       if (response.status === 200 || response.status === 201) {
 
-        //setAuthTokens(data);
+        setAuthTokens(data);
         setUser(jwt_decode(data.accessToken))
         localStorage.setItem("authTokens", JSON.stringify(data));
         navigate("/");
@@ -74,6 +74,8 @@ export const AuthProvider = ({ children }) => {
 
     }
   }
+
+  
 
   const logoutUser = () => {
     setAuthTokens(null);
