@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 
-const CommentForm = ({docId}) => {
+const CommentForm = ({ docId }) => {
     const [message, setMessage] = useState('');
 
     const handleSubmit = async (e) => {
@@ -36,12 +36,16 @@ const CommentForm = ({docId}) => {
     }, [])
 
 
-  return (
-    <form action="" onSubmit={handleSubmit}>
-        <textarea name="" id="" cols="30" rows="10" value={message} onChange={(e) => setMessage(e.target.value)} ></textarea>
-        <button type='submit'>send</button>
-    </form>
-  )
+    return (
+        <form action="" onSubmit={handleSubmit} className="comment__form">
+            <h3>Add a Comment</h3>
+            <div className="area">
+                <textarea name="" id="" cols="50" rows="10" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type something..."></textarea>
+                <button type='submit'>send</button>
+            </div>
+
+        </form>
+    )
 }
 
 export default CommentForm

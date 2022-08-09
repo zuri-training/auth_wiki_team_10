@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Heading = ({content}) => {
-  
+const Heading = ({ content }) => {
+
   return (
-    <h2>{content}</h2>
+    <h2 style={{ margin: "1.5rem 0" }}>{content}</h2>
   )
 }
 

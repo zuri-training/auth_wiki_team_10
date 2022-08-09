@@ -1,8 +1,16 @@
 import React from 'react'
 
-const Paragraph = ({content}) => {
+
+
+const Paragraph = ({ content }) => {
   return (
-    <p>{content}</p>
+    <>
+      <div style={{ marginBottom: "1rem" }}
+        dangerouslySetInnerHTML={{
+          __html: content
+        }}
+      />
+    </>
   )
 }
 
