@@ -3,11 +3,14 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
-
+from django.views.generic import TemplateView 
 from .serializers import RegisterSerializer, LoginSerializer
 from .models import User
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from rest_auth.registration.views import SocialLoginView
 
 
+    
 class RegisterView(generics.GenericAPIView):
 
     serializer_class = RegisterSerializer
@@ -35,3 +38,7 @@ class LoginAPIView(generics.GenericAPIView):
 class VerifyEmail(generics.GenericAPIView):
     def get(self):
         pass
+
+
+class GoogleLogin(SocialLoginView):
+    adapter_class = GoogleOAuth2Adapter
