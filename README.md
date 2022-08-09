@@ -15,7 +15,7 @@ In this project, we're building an Wiki Platform that has authentication codes t
 - Design Link - https://www.figma.com/file/rim5Uin1lkaLl0JD5rhcf5/Zuri-Project-File
 - Frontend - In the `/client` folder
 
-
+<!--
 ### How to contribute
 Follow these steps if you want to contribute to this project:
 - Fork the repository. Open your terminal and clone the forked repo locally.
@@ -59,3 +59,31 @@ Follow these steps to setup and run server:
   ```js
     pip freeze --local requirements.txt
   ```
+  -->
+  
+  
+  
+  # Teammates and work
+  ## 1) Falence Lemungoh
+  ### Completed Tasks
+  - [Set up basic django server scaffolding with db](https://github.com/zuri-training/auth_wiki_team_10/issues/7)
+  - [Add pagination to Docs API](https://github.com/zuri-training/auth_wiki_team_10/issues/138)
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

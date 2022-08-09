@@ -33,6 +33,7 @@ footer{
 .footer__about form{
     display: flex;
     flex-direction: column;
+    width: 300px;
 }
 
 .footer__about form input{

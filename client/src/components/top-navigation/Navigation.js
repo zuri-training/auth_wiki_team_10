@@ -1,16 +1,29 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import {GiHamburgerMenu} from 'react-icons/gi'
+import {AiOutlineClose} from 'react-icons/ai'
+import AuthContext from "../../context/AuthProvider";
+
 import "./Navigation.css";
+
+//Images import
 import Logo from "../../assets/images/logo-auth.png"
 
 //components
 import UserInfo from '../userInfo/UserInfo'
-import AuthContext from "../../context/AuthContext";
+import user from '../../context/AuthProvider'
 
 const Navigation = () => {
-  const { user, logoutUser } = useContext(AuthContext);
+ const { user, logoutUser } = useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false)
 
-  return <div className= "navigation">
+  const showNav = () => {
+    setIsOpen(!isOpen)
+  }
+
+  return (
+  <div className= "navigation">
+    <div className="navigation__container">
        <div className= "navigation__left">
         <div className="container__left--logo">
           <Link to= "/">
@@ -53,7 +66,68 @@ const Navigation = () => {
             </>
           )}
        </div>
-  </div>;
+        
+        <div className="navigation__right__mobile">
+          {!isOpen && (
+            <GiHamburgerMenu
+              style={{ cursor: "pointer" }}
+              onClick={showNav}
+              size={30}
+            />
+          )}
+          {isOpen && (
+            <AiOutlineClose
+              style={{ cursor: "pointer" }}
+              onClick={showNav}
+              size={30}
+            />
+          )}
+        </div>  
+     </div>
+       <div
+        className={
+          isOpen
+            ? "navigation__container__mobile--links"
+            : "navigation__container__mobile--links--none"
+        }
+      >
+        <NavLink to = "/">
+           <p onClick={() => setIsOpen(false)} className="mobile--links">Home</p> 
+           <hr />
+        </NavLink>
+
+        <NavLink to= "/docs">
+          <p onClick={() => setIsOpen(false)} className="mobile--links">Documentation</p> 
+           <hr />
+        </NavLink>
+
+        <NavLink to= "/community">
+          <p onClick={() => setIsOpen(false)} className="mobile--links">Community</p> 
+           <hr />
+        </NavLink>
+
+        {user ? (
+            <>
+              <UserInfo />
+              <button>{logoutUser}</button>
+            </>
+          ) : (
+            <>
+              <Link to = "/login">
+                <button id="login--mobile">Login</button>
+              </Link>
+
+              <Link to = "/signup">
+                <button  id="signup--mobile">Sign Up</button>
+              </Link>
+            </>
+          )}
+      </div> 
+    
+     
+
+  </div>
+  );
 };
 
 export default Navigation;
