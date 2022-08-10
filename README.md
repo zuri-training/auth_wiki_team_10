@@ -13,6 +13,7 @@ In this project, we're building an Wiki Platform that has authentication codes t
 ### Project Links
 
 - Design Link - https://www.figma.com/file/rim5Uin1lkaLl0JD5rhcf5/Zuri-Project-File
+- Figma Jam - https://www.figma.com/file/S2PHA3zmeX0YrjdURVvc1T/User-Flow-and-Persona?node-id=0%3A1
 - Frontend - In the `/client` folder
 
 <!--
@@ -61,13 +62,7 @@ Follow these steps to setup and run server:
   ```
   -->
   
-  
-  
-  # Teammates and work
-  ## 1) Falence Lemungoh
-  ### Completed Tasks
-  - [Set up basic django server scaffolding with db](https://github.com/zuri-training/auth_wiki_team_10/issues/7)
-  - [Add pagination to Docs API](https://github.com/zuri-training/auth_wiki_team_10/issues/138)
+ 
   
   
   
