@@ -1,18 +1,15 @@
-
-/* HERO section */
 .landingpage{
-    
+    width: 100%;
 }
 
+/* HERO section */
 .hero_section{
     background-color: var(--hero-bg);
     background-image: url(../../assets/svgs/Union.svg);
-    height: auto;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 900px;
     background-color: var(--primary-color);
-    height: 100vh;
     text-align: center;
     padding-top: 7rem;
 }
@@ -21,8 +18,8 @@
     position: relative;
     display: flex;
     align-items: center;
-    width: 500px;
-    max-width: 100%;
+    width: 85%;
+    max-width: 500px;
     height: 2.5rem;
     margin: 4rem auto 0;
     padding: 0.8rem;
@@ -35,31 +32,55 @@
     height: 2rem;
     margin-left: 0.3rem;
     color: var(--grey-font);
+    font-size: 0.9rem;
+}
+
+.form_search input::placeholder{
+    font-size: 0.9rem;
 }
 
 .hero_section h1{
     color: #eee;
-    font-size: 3.5rem;
+    padding: 0 6%;
+    font-size: 45.6px;
     font-weight: 700;
+    margin-top:70px ;
 }
 
-.hero_section .spark{
+.hero_section h1 span{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    top: 70px;
-    left: 450px;
 }
+
+.hero_section h1 span::after{
+    content: url('../../assets/images/auth-eclipse.png');
+    display: inline-flex;
+    z-index: 1;
+    margin-left: 80%;
+    transform: scale(.6);
+    position: absolute;
+}
+
 .hero_section p{
     color: var(--grey-font);
     font-weight: 400;
-    font-size: 1.2rem;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    margin: 30px auto 0 auto;
+}
+
+.hero_section .intro_text{
+    width: 700px;
 }
 
 .form_email{
     background-color: var(--white);
-    width: 800px;
-    max-width: 100%;
-    height: 3.2rem;
-    margin: 1rem auto;
+    max-width: 800px;
+    width: 90%;
+    margin: 40px auto 0 auto;
     display: flex;
     justify-content: space-between;
     border-radius: 6px;
@@ -67,38 +88,48 @@
 }
 
 .form_email input{
-    
-    flex: 1;
+    width: 65%;
+    font-size: 0.9rem;
+}
+
+.form_email input::placeholder{
+    font-size: 0.9rem;
 }
 
 .form_email button{
+    width: 35%;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
 }
 
 .traffic__container{
-    margin-top: 9rem;
+    width: 100%;
+    padding: 0 5% 30px 5%;
+    margin: 9rem auto 0 auto;
     display: flex;
-    justify-content: center;
-    gap: 10rem;
-    font-size: 1rem;
+    flex-direction: row;
     align-items: center;
-   
+    justify-content: space-around;
+    
 }
 
 .traffic__item:nth-child(2){
     border-left: 1px solid var(--grey-font);
     border-right: 1px solid var(--grey-font);
-    padding: 0 5rem;
+    padding: 0 5%;
 }
 .traffic__item span{
     font-weight: 700;
+    font-size: 0.9rem;
     color: var(--white);    
 }
 
 .traffic__item p{
     text-transform: uppercase;
     margin-top: 1.5rem;
+    font-size: 0.9rem;
 }
 
 /* END OF HERO SECTION */
@@ -107,6 +138,7 @@
     background: var(--whiteash);
     padding: 6rem 2rem;
     padding-bottom: 4rem;
+    margin: auto;
 }
 
 .auth__title{
@@ -118,8 +150,7 @@
 
 .left__title__img{
     position: absolute;
-    left: -550px;
-    top: 20px;
+    left: -420px;
     right: 0;
     bottom: 0;
 }
@@ -127,8 +158,7 @@
 .right__title__img{
     position: absolute;
     left: 0;
-    top: 20px;
-    right: -550px;
+    right: -420px;
     bottom: 0;
 }
 
@@ -140,29 +170,33 @@
     color: var(--black);
     font-weight: 700;
     text-transform: capitalize;
-    font-size: 2rem;
+    font-size: 29px;
 }
 
 .auth__title p{
     color: #5C5C5C;
     font-weight: 400;
+    font-size: 0.9rem;
 }
 
-#brands{
-    padding: 7rem 6rem;
-}
 .brand__images{
     padding: 2rem;
-    padding-top: 4rem;
+    padding-top: 2.6rem;
     display: flex;
+    margin: auto;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .brand__images .brand__image{
     padding: 0 1rem;
-    width: 15%;
+    width: 170px;
+}
+
+@media screen and (max-width:800px) {
+    .brand__images .brand__image{
+        width: 140px;
+    }
 }
 
 /* End of Brands */
@@ -174,10 +208,13 @@
 }
 
 #why__us{
-    /* max-width: 1220px; */
+    padding-top: 60px;
     background: var(--whiteash);
-   padding: 7rem 6rem;
     border-radius: 0 0 60px 0;
+}
+
+.auth__title p{
+    font-size: 0.965rem;
 }
 
 .why__title__img{
@@ -190,26 +227,39 @@
 
 .why__wrapper{
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    padding: 6rem 2rem;
+    margin: auto;
+    align-items: flex-start;
+    margin-top: 80px;
+    padding: 0 3.7% 180px 3.7%;
 }
 
-
-
 .why__container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.why__container div{
+    padding: 5%;
     position: relative;
-    width: 25rem;
-    padding: 2rem;
-    padding-top: 4rem;
     background: var(--white);
     border: 1px solid rgba(170, 187, 196, 1);
     border-radius: 0px 0px 75px 0px;
+}
+
+.why__container:nth-child(1)::after, .why__container:nth-child(2)::after{
+    content: url(../../assets/svgs/hrArrow.svg);
+    display: inline-flex;
+    
 }
 
 .why__container h5{
     font-weight: 600;
     margin-bottom: 0.3rem;
     font-size: 1.25rem;
+    padding-top: 50px;
 }
 
 .why__container span{
@@ -222,6 +272,7 @@
 
 .why__container p{
     line-height: 30px;
+    font-size: 0.9rem;
 }
 
 /* End of Why Us */
@@ -231,7 +282,6 @@
  
 #auth__codes{
     background: var(--primary-color);
-    padding: 2rem;
     padding-bottom: 6rem;
     border-radius: 150px 0px;
 }
@@ -246,7 +296,9 @@
 }
 
 .atc__2 #atc__p{
-    margin: 0 25%;
+    margin: auto;
+    max-width: 600px;
+    font-size: 0.9rem;
 }
 
 .atc__icons{
@@ -289,12 +341,12 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    /* padding: 2rem; */
+    padding: 0 5%;
 }
 
 #authreadme__img img{
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
 }
 
 .atc__nav{
@@ -303,16 +355,23 @@
 }
 
 .atc__lang{
-    padding: 4rem;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 60px;
+}
+
+#authreadme__img .authcode_img{
+    width: 100%;
+    margin: auto;
 }
 
 #atc__arr_btn{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 0.9rem;
 }
 
 #atc__arr_btn img{
@@ -322,16 +381,33 @@
 #atc__arr_btn button{
     background: transparent;
     padding: 1rem 1.5rem;
+    font-size: 0.9rem;
 }
 .ath__waitlist{
     padding-top: 1rem;
+    padding-bottom: 1.8rem;
+    width: 100%;
+    margin: auto;
+    max-width: 650px;
+}
+
+.form-control::placeholder{
+    font-size: 0.9rem;
+}
+
+.form-control{
+    width: 70%;
 }
 
 .ath__waitlist .input-group-text{
     color: var(--white);
-     background: var(--button-bg);
-     border: 0;
-     padding: 0.7rem 3rem;
+    background: var(--button-bg);
+    border: 0;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 0.7rem 0;
 }
 
 /* End of Auth Codes */       
@@ -344,7 +420,7 @@
 
 #newsletter{
     background-color: var(--whiteash);
-    padding: 6rem;
+    padding: 100px 6%;
     border-radius: 40px 0 0 0;
 }
 
@@ -352,18 +428,18 @@
     text-align: center;
     margin: 0 auto;
     padding: 2rem;
-    /* margin-bottom: 3rem; */
 }
 
 #auth__productivity p{
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: #343434;
 }
 
 #auth__productivity h2{
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
+    line-height: 1em;
     padding-bottom: 2rem;
 }
 
@@ -372,18 +448,120 @@
 }
 
 .ath__subscribe{
-    margin: 4rem auto;
-    padding: 2rem; 
-    background-image: url(../../assets/images/Rectangle27.png);
-   
-    /* background-image: url(../assets/images/Frame\ 180.svg); */
-    border-radius: 8px;
-    width: 70%;
+    margin: 4rem auto; 
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+    background-color: #000A10;
 }
 
-/* .ath__subscribe .atc__2 .hero__waitlist{
-    
-} */
+.ath__subscribe::before{
+    content: '';
+    display: block;
+    width: 50.22%;
+    height: 26%;
+    position: absolute;
+    transform: skew(0, 8deg);
+	background-color: #000A10;
+    margin: auto;
+    bottom: 0;
+    top: 100%;
+}
+
+.ath__subscribe::after{
+    content: '';
+    display: block;
+    width: 49.95%;
+    height: 26%;
+    position: absolute;
+    transform: skew(0, -8deg);
+	background-color: #000A10;
+    margin: auto;
+    bottom: 0;
+    right: 0;
+    top: 100%;
+}
+
+.signup__btn{
+    font-size: 12.5px;
+}
+
 
 /* End of Newsletter */
+@media screen and (max-width:1000px) {
+    .why__wrapper{
+        flex-direction: column;
+        gap: 37px;
+        padding: 50px 0 250px 0;
+    }
+    .why__container{
+        width: 70%;
+        max-width: 500px;
+        margin: auto;
+        flex-direction: column;
+    }
+    .why__container div{
+        padding: 0 5%;
+        height: 100%;
+    }
+    .why__container:nth-child(1)::after, .why__container:nth-child(2)::after{
+        transform: rotate(90deg);
+        display:block;
+        margin: 60px 0 20px 0;
+    }
+}
 
+@media screen and (max-width:830px) {
+    .hero_section .intro_text{
+        width: unset;
+        padding: 0 6%;
+    }
+    .hero_section h1 span::after{
+        transform: scale(.5);
+    }
+    .hero_section h1{
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .hero_section{
+        background-size: 800px;
+        background-position: right 0px;
+    }
+    .brand__images{
+        flex-direction: column;
+        gap: 80px;
+    }
+    .brand__images .brand__image{
+        width: 200px;
+    }
+    html, body{
+        font-size: 14px;
+    }
+    .why__wrapper{
+        flex-direction: column;
+        gap: 37px;
+        padding: 50px 0 250px 0;
+    }
+    .why__container{
+        width: 70%;
+        max-width: 400px;
+        margin: auto;
+        flex-direction: column;
+    }
+    .why__container div{
+        padding: 0 5%;
+        height: 100%;
+    }
+    .why__container:nth-child(1)::after, .why__container:nth-child(2)::after{
+        transform: rotate(90deg);
+        display:block;
+        margin: 60px 0 20px 0;
+    }
+}
+
+@media screen and (max-width:500px){
+
+}

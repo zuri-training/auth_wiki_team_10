@@ -19,9 +19,12 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const { errMsg, registerUser } = useContext(AuthContext);
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const handleSubmit = async e => {
     e.preventDefault();
+    setIsLoading(true)
     registerUser(name, email, password);
   };
 
@@ -34,6 +37,7 @@ const Signup = () => {
         <div>
           <h2>Create An Account...</h2>
           <p>Get started with us</p>
+          {isLoading && <div className="loading__state">Loading ...</div>}
           {errMsg && <span className="error"><img src={Exclamation} alt="exclamation" />{errMsg}</span>}
           <form id="form" onSubmit={handleSubmit}>
             <div className="inputControl">

@@ -6,7 +6,6 @@ import "./LandingPage.css";
 
 //Images Import
 import Search from "../../assets/images/akar-icons_search.png";
-import Sparkle from "../../assets/images/auth-eclipse.png";
 import Sketch1 from "../../assets/svgs/sketch_title1.svg";
 import Sketch2 from "../../assets/svgs/sketch_title2.svg";
 import Slack from "../../assets/svgs/Slack.svg";
@@ -16,7 +15,6 @@ import i4g from "../../assets/images/I4g.png";
 import WhyIcon from "../../assets/svgs/whyIcon.svg";
 import DocsIcon from "../../assets/svgs/fluent_people-community-add-28-regular-1.svg";
 import Community from "../../assets/svgs/fluent_people-community-add-28-regular.svg";
-import Arrow from "../../assets/svgs/hrArrow.svg";
 import Download from "../../assets/images/downloadCode.png";
 import Pages from "../.././assets/svgs/akar-icons_copy.svg";
 import Fire from "../../assets/svgs/Fire.svg";
@@ -30,22 +28,18 @@ import Nodejs from "../../assets/svgs/Node.js - jpeg.svg";
 import Php from "../../assets/svgs/g3438.svg";
 import Arrow2 from "../../assets/svgs/atc__arrow.svg";
 
-
-
-
-
 const LandingPage = () => {
   return (
     <div className="landingpage">
+
       <section className="hero_section">
         <form className="form_search">
           <img src={Search} alt="search" />
           <input type="text" placeholder="Search Library" />
         </form>
-        <img src={Sparkle} alt="spark" className="spark" width={"100px"} />
-        <h1>A Library of Authentication Codes</h1>
+        <h1>A Library of Authentication <span>Codes</span></h1>
 
-        <p style={{ padding: "1rem 13rem" }}>
+        <p className="intro_text">
           Auth-wiki provides a comprehensive collection of authentication codes
           for developers. Extremely flexible and modular, Auth wiki codes can be
           dropped into any Express based Web application for use.
@@ -111,36 +105,40 @@ const LandingPage = () => {
 
           <div className="why__wrapper">
             <div className="why__container">
-              <span>
-                <img src={DocsIcon} alt="docs" />
-              </span>
-              <h5>Documentation</h5>
-              <p>
-                The use, operation, maintenance of the authentication codes are
-                listed and explained for easy use by the developers.
-              </p>
+              <div>
+                <span>
+                  <img src={DocsIcon} alt="docs" />
+                </span>
+                <h5>Documentation</h5>
+                <p>
+                  The use, operation, maintenance of the authentication codes are
+                  listed and explained for easy use by the developers.
+                </p>
+              </div>
             </div>
-            <img src={Arrow} alt="arrow" />
             <div className="why__container">
-              <span>
-                <img src={Download} alt="download" />
-              </span>
-              <h5>Download</h5>
-              <p>
-                We provide a download option for Authenticated and verified
-                users to use the codes when they please and in any instance.
-              </p>
+              <div>
+                <span>
+                  <img src={Download} alt="download" />
+                </span>
+                <h5>Download</h5>
+                <p>
+                  We provide a download option for Authenticated and verified
+                  users to use the codes when they please and in any instance.
+                </p>
+              </div>
             </div>
-            <img src={Arrow} alt="arrow" />
             <div className="why__container">
-              <span>
-                <img src={Community} alt="community" />
-              </span>
-              <h5>Community</h5>
-              <p>
-                Auth-wiki provides a community of developers and codes.
-                Interactions, comments and duplication.
-              </p>
+              <div>
+                <span>
+                  <img src={Community} alt="community" />
+                </span>
+                <h5>Community</h5>
+                <p>
+                  Auth-wiki provides a community of developers and codes.
+                  Interactions, comments and duplication.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -187,13 +185,13 @@ const LandingPage = () => {
           </div>
           <div className="atc__nav atc__lang">
             <span id="">
-              <img src={Python} alt="python" className="" />
+              <img src={Python} alt="python" className="authcode_img" />
             </span>
             <span id="">
-              <img src={Nodejs} alt="nodejs" className="" />
+              <img src={Nodejs} alt="nodejs" className="authcode_img" />
             </span>
             <span id="">
-              <img src={Php} alt="php" className="" />
+              <img src={Php} alt="php" className="authcode_img" />
             </span>
           </div>
 
@@ -238,6 +236,8 @@ const LandingPage = () => {
       </div>
 
       {/* End of newsletter */}
+
+
     </div>
   );
 };

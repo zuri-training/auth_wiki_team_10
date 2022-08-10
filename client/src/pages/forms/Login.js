@@ -1,4 +1,4 @@
-import { React, useContext } from "react";
+import { React, useContext, useState } from "react";
 import { Link } from 'react-router-dom'
 
 //Context
@@ -21,13 +21,23 @@ import EyeSlash from '../../assets/svgs/eye-slash-fill.svg'
 
 
 const Login = () => {
-  const { errMsg, loginUser } = useContext(AuthContext);
+  const { loginUser, errMsg } = useContext(AuthContext);
+  const [isLoading, setIsLoading] = useState(false);
+
+
+
   const handleSubmit = e => {
     e.preventDefault();
+    setIsLoading(true)
+
+
     const email = e.target.email.value;
     const password = e.target.password.value;
     email.length > 0 && loginUser(email, password);
+
   };
+
+
 
   return (
     <div className='auth__container'>
@@ -39,9 +49,10 @@ const Login = () => {
         <div>
           <h2>Welcome Back...</h2>
           <p>Log in to continue</p>
-          {errMsg && <span>{errMsg}</span>}
-          <form id="form" onSubmit={handleSubmit}>
+          {isLoading && <div className="loading__state">Loading ...</div>}
+          {errMsg && <span className="error"><img src={Exclamation} alt="exclamation" />{errMsg}</span>}
 
+          <form id="form" onSubmit={handleSubmit}>
             <div className="inputControl">
               <label htmlFor="email">Email</label>
               <input id="email" name="email" type="email" placeholder="example@gmail.com" />
@@ -66,7 +77,7 @@ const Login = () => {
                   <div className="error" id="error-2">Password is required</div>
                 </div>
                 <div className="forgotPassword">
-                  <Link to={"./forgotpassword"}>Forgot Password?</Link>
+                  <Link to={"/forgotpassword"}>Forgot Password?</Link>
                 </div>
               </div>
             </div>
