@@ -13,7 +13,7 @@ In this project, we're building an Wiki Platform that has authentication codes t
 ### Project Links
 
 - Design Link - https://www.figma.com/file/rim5Uin1lkaLl0JD5rhcf5/Zuri-Project-File
-- User Research (Figma Jam) - https://www.figma.com/file/S2PHA3zmeX0YrjdURVvc1T/User-Flow-and-Persona?node-id=0%3A1
+- User Research (FigJam) - https://www.figma.com/file/S2PHA3zmeX0YrjdURVvc1T/User-Flow-and-Persona?node-id=0%3A1
 - Research Plan - https://docs.google.com/document/d/1YRUBBkxGBJi_lNgeBntg_zOmapn0gqi5e-P8YZ8k3ak/edit?usp=sharing
 - Frontend - In the `/client` folder
 
