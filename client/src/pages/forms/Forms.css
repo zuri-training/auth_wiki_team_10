@@ -250,24 +250,15 @@ form .inputControl {
   display: block;
   font-weight: 500;
 }
-.eye, .eye-slash{
-  width: 20px;
-  position: absolute;
-  right:12px;
-  cursor :pointer;
+
+.password-toogle-icon {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    z-index: 1000;
+    cursor: pointer;
 }
 
-.eye-slash{
-  display: none;
-}
-
-.eye-slash.active{
-  display: block;
-}
-
-.eye.active{
-  display: none;
-}
 
 .forgotPassword{
   float :right;
