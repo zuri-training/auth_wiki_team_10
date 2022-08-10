@@ -18,6 +18,13 @@ const REGISTER_URL = '/register';
 
 
 const Signup = () => {
+<<<<<<< HEAD
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
+  const { errMsg, registerUser } = useContext(AuthContext);
+=======
   const userRef = useRef();
   const errRef = useRef();
 
@@ -60,9 +67,78 @@ const Signup = () => {
   useEffect(() => {
     setErrMsg('');
   }, [user, email, pwd, matchPwd])
+>>>>>>> 6321a50a87f96a52060223c6281645bea0d2018b
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
+    registerUser(name, email, password);
+  };
+
+  return (
+    <div className='auth__container register'><div className="auth__container--left">
+          <img src={OfficeDesk} alt="office desk" className="office-desk"/>
+        </div>
+
+        <div className="auth__container--right">
+          <div>
+            <h2>Create An Account...</h2>
+            <p>Get started with us</p>
+          {errMsg && <span className ="error"><img src={Exclamation} alt="exclamation" />{errMsg}</span> }
+            <form id="form" onSubmit={handleSubmit}>
+              <div className="inputControl">
+                <label htmlFor="fullname">Full Name</label> <br />
+                <input id="fullname" name="fullname" type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+                <div className="error__container">
+                <div className="err">
+                  <img src={Exclamation} alt="exclamation" className="exclamation" />
+                <span className="error"></span>
+                </div>
+                </div>
+              </div>
+
+              <div className="inputControl">
+                <label htmlFor="email">Email</label> <br />
+                <input id="email" name="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+                <div className="error__container">
+                <div className="err">
+                  <img src={Exclamation} alt="exclamation" className="exclamation" />
+                <span className="error"></span>
+                </div>
+                </div>
+              </div>
+
+              <div className="inputControl">
+                <label htmlFor="password">Password</label> <br />
+                <input id="password" name="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+                <div className="error__container">
+                <div className="err">
+                  <img src={Exclamation} alt="exclamation" className="exclamation" />
+                <span className="error"></span>
+                </div>
+                </div>
+              </div>
+
+              <div className="inputControl">
+                <label htmlFor="password">Confirm Password</label> <br />
+                <input id="password2" name="password2" type="password" onChange={(e) => setPassword2(e.target.value)} required/>
+                <div className="error__container">
+                <div className="err">
+                  {password2 !== password ?( 
+                    <span className="error"><img src={Exclamation} alt="exclamation" />"Passwords do not match"</span>
+                    ) : 
+                  ""}
+                  
+                </div>
+                </div>
+              </div>
+
+              <div className="terms__and__conditions">
+                <input type="checkbox" name="checkbox" id="checkbox" />
+                <small
+                  >I agree to the <Link to={'/community'}>terms of service</Link> and <Link to={'/community'}>privacy policy.</Link></small
+                >
+=======
     // if button enabled with JS hack
     const v1 = USER_REGEX.test(user);
     const v2 = EMAIL_REGEX.test(email)
@@ -203,18 +279,28 @@ const Signup = () => {
               <div id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
                 <img src={Exclamation} alt="exclamation" />
                 Must match the first password input field.
+>>>>>>> 6321a50a87f96a52060223c6281645bea0d2018b
               </div>
             </div>
             {/* error area ends */}
 
+<<<<<<< HEAD
+              <div className="buttons__row">
+                <button type="submit">Sign up</button>
+=======
+>>>>>>> 6321a50a87f96a52060223c6281645bea0d2018b
 
 
+<<<<<<< HEAD
+                <strong className="or">or</strong>
+=======
             <div className="terms__and__conditions">
               <input type="checkbox" name="checkbox" id="checkbox" />
               <small
               >I agree to the <Link to={'/community'}>terms of service</Link> and <Link to={'/community'}>privacy policy.</Link></small
               >
             </div>
+>>>>>>> 6321a50a87f96a52060223c6281645bea0d2018b
 
             <div className="buttons__row">
               <button disabled={!validName || !validEmail || !validPwd || !validMatch ? true : false} id="signup__button"> <span>Sign Up</span></button>

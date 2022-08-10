@@ -27,6 +27,11 @@ const Login = () => {
   const userRef = useRef();
   const errRef = useRef();
 
+<<<<<<< HEAD
+const Login = () => {
+    const { errMsg, loginUser } = useContext(AuthContext);
+  const handleSubmit = e => {
+=======
   const [user, setUser] = useState('');
   const [pwd, setPwd] = useState('');
   const [errMsg, setErrMsg] = useState('');
@@ -40,6 +45,7 @@ const Login = () => {
   }, [user, pwd])
 
   const handleSubmit = async (e) => {
+>>>>>>> 6321a50a87f96a52060223c6281645bea0d2018b
     e.preventDefault();
 
     try {
@@ -84,6 +90,20 @@ const Login = () => {
           <div>
             <h2>Welcome Back...</h2>
             <p>Log in to continue</p>
+<<<<<<< HEAD
+            {errMsg && <span>{errMsg}</span> }
+            <form id="form" onSubmit={handleSubmit}>
+
+              <div className="inputControl">
+                <label htmlFor="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="example@gmail.com" />
+                <div className="error__container">
+                  <div className="err">
+                    <img src={Exclamation} alt="exclamation" className="exclamation" id='exclamation' />
+                    <div className="error" id="error">Email is required</div>
+                  </div>
+                </div>
+=======
           <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive"><img src={Exclamation} alt="exclamation"/>{errMsg}</p>
             <form id="form" onSubmit={handleSubmit}>
 
@@ -98,6 +118,7 @@ const Login = () => {
                 onChange={(e) => setUser(e.target.value)}
                 value={user}
                 required />
+>>>>>>> 6321a50a87f96a52060223c6281645bea0d2018b
               </div>
 
               <div className="inputControl">

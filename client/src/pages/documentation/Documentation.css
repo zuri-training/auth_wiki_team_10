@@ -1,19 +1,19 @@
 #docs__container{
     background-color: var(--whiteash);
-    
+    padding: 0 10rem;
+    margin:10rem 3rem;
 }
 
 main #getting-started {
     margin-top: 4rem;
     width: inherit;
-    height: 70px;
-    margin-bottom: 104px;
+    margin-top: 7rem;
     text-align: center;
-    padding: 5rem 0;
+    padding: 5rem 0 3rem;
 }
 
 main #getting-started h1{
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 main #intro {
     width: inherit;

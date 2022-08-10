@@ -30,10 +30,13 @@ import Nodejs from "../../assets/svgs/Node.js - jpeg.svg";
 import Php from "../../assets/svgs/g3438.svg";
 import Arrow2 from "../../assets/svgs/atc__arrow.svg";
 
+
+
+
+
 const LandingPage = () => {
   return (
     <div className="landingpage">
-      
       <section className="hero_section">
         <form className="form_search">
           <img src={Search} alt="search" />
@@ -145,8 +148,8 @@ const LandingPage = () => {
       {/* End of why us section */}
 
       {/* Auth Codes section */}
-    <section id="auth__codes">
-      <div className="auth__title atc__2">
+      <section id="auth__codes">
+        <div className="auth__title atc__2">
           <h3 className="atc__title">Auth-Wiki Authentication Codes</h3>
           <p>
             The Various authentication codes we have for Php, Nodejs and Phython
@@ -163,10 +166,10 @@ const LandingPage = () => {
           </p>
 
           <div className="auth__flex atc__icons">
-                <span id="ath__file"><img src={Pages} alt="pages" className="authcode__img" /> 1,500</span>
-                <span id="ath__fire"><img src={Fire} alt="fire" className="authcode__img" /> 1,500</span>
-                <span id="ath__comment"><img src={Comments} alt="comments" className="authcode__img" /> 1,500</span>
-            </div>
+            <span id="ath__file"><img src={Pages} alt="pages" className="authcode__img" /> 1,500</span>
+            <span id="ath__fire"><img src={Fire} alt="fire" className="authcode__img" /> 1,500</span>
+            <span id="ath__comment"><img src={Comments} alt="comments" className="authcode__img" /> 1,500</span>
+          </div>
         </div>
 
         <div id="authreadme__img">
@@ -201,42 +204,40 @@ const LandingPage = () => {
             </Link>
           </div>
         </div>
-        </section>
+      </section>
 
-        {/* end of auth codes section */}
+      {/* end of auth codes section */}
 
-        {/* Beginning of newsletter */}
+      {/* Beginning of newsletter */}
 
-        <div className="black__bg">
+      <div className="black__bg">
         <section id="newsletter">
-            <div id="auth__productivity">
-                <p>Get unlimited access to all of Auth-wiki features today, join the Community. </p>
-                <h2>Enhance your productivity, <span>Get started!</span></h2>
-                <Link to={'/signup'}>
-                <button className="nav__btn signup__btn">Sign up</button>
-                </Link>
-                
-            </div>
+          <div id="auth__productivity">
+            <p>Get unlimited access to all of Auth-wiki features today, join the Community. </p>
+            <h2>Enhance your productivity, <span>Get started!</span></h2>
+            <Link to={'/signup'}>
+              <button className="nav__btn signup__btn">Sign up</button>
+            </Link>
 
-            <div className="ath__subscribe">
-                <div className="auth__title atc__2">
-                    <h3 className="atc__title">Subscribe to our newsletter</h3>
-                    <p>Stay updated on our latest news. 
-                        We promise only valuable mails and 
-                        we will not spam you with unnecessaries.</p>
-                    <div className="mb-3 input-group ath__waitlist">
-                        <input type="text" className="form-control" placeholder="Enter Email" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                        <span className="input-group-text" id="basic-addon2" style={{cursor: "pointer"}}>Subscribe</span>
-                       
-                    </div>
-                </div>
+          </div>
+
+          <div className="ath__subscribe">
+            <div className="auth__title atc__2">
+              <h3 className="atc__title">Subscribe to our newsletter</h3>
+              <p>Stay updated on our latest news.
+                We promise only valuable mails and
+                we will not spam you with unnecessaries.</p>
+              <div className="mb-3 input-group ath__waitlist">
+                <input type="text" className="form-control" placeholder="Enter Email" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                <span className="input-group-text" id="basic-addon2" style={{ cursor: "pointer" }}>Subscribe</span>
+
+              </div>
             </div>
+          </div>
         </section>
-    </div>
+      </div>
 
-    {/* End of newsletter */}
-
-   
+      {/* End of newsletter */}
     </div>
   );
 };

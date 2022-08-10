@@ -1,8 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import {GiHamburgerMenu} from 'react-icons/gi'
-import {AiOutlineClose} from 'react-icons/ai'
-import AuthContext from "../../context/AuthProvider";
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { AiOutlineClose } from 'react-icons/ai'
 
 import "./Navigation.css";
 
@@ -11,10 +10,10 @@ import Logo from "../../assets/images/logo-auth.png"
 
 //components
 import UserInfo from '../userInfo/UserInfo'
-import user from '../../context/AuthProvider'
+import AuthContext from "../../context/AuthContext";
 
 const Navigation = () => {
- const { user, logoutUser } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false)
 
   const showNav = () => {
@@ -22,51 +21,51 @@ const Navigation = () => {
   }
 
   return (
-  <div className= "navigation">
-    <div className="navigation__container">
-       <div className= "navigation__left">
-        <div className="container__left--logo">
-          <Link to= "/">
-          <img src={Logo} alt="auth-logo" />
-        </Link>
+    <div className="navigation">
+      <div className="navigation__container">
+        <div className="navigation__left">
+          <div className="container__left--logo">
+            <Link to="/">
+              <img src={Logo} alt="auth-logo" />
+            </Link>
+          </div>
+
+          <div className="navigation__left--links">
+            <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
+              Home
+            </NavLink>
+
+            <NavLink to="/documentation" className={({ isActive }) => (isActive ? "active" : "")}>
+              Documentation
+            </NavLink>
+
+            <NavLink to="/community" className={({ isActive }) => (isActive ? "active" : "")}>
+              Community
+            </NavLink>
+          </div>
+
         </div>
-        
-        <div className="navigation__left--links">
-          <NavLink to = "/" className={({ isActive }) => (isActive ? "active" : "")}>
-          Home
-        </NavLink>
 
-        <NavLink to= "/docs" className={({ isActive }) => (isActive ? "active" : "")}>
-          Documentation
-        </NavLink>
+        <div className="navigation__right">
 
-        <NavLink to= "/community" className={({ isActive }) => (isActive ? "active" : "")}>
-          Community
-        </NavLink>
-        </div>
-        
-       </div>
-
-       <div className="navigation__right">
-
-         {user ? (
-            <>
+          {user ? (
+            <div>
               <UserInfo />
-              <button>{logoutUser}</button>
-            </>
+
+            </div>
           ) : (
             <>
-              <Link to = "/login">
+              <Link to="/login">
                 <button id="login">Login</button>
               </Link>
 
-              <Link to = "/signup">
-                <button  id="signup">Sign Up</button>
+              <Link to="/signup">
+                <button id="signup">Sign Up</button>
               </Link>
             </>
           )}
-       </div>
-        
+        </div>
+
         <div className="navigation__right__mobile">
           {!isOpen && (
             <GiHamburgerMenu
@@ -82,51 +81,50 @@ const Navigation = () => {
               size={30}
             />
           )}
-        </div>  
-     </div>
-       <div
+        </div>
+      </div>
+      <div
         className={
           isOpen
             ? "navigation__container__mobile--links"
             : "navigation__container__mobile--links--none"
         }
       >
-        <NavLink to = "/">
-           <p onClick={() => setIsOpen(false)} className="mobile--links">Home</p> 
-           <hr />
+        <NavLink to="/">
+          <p onClick={() => setIsOpen(false)} className="mobile--links">Home</p>
+          <hr />
         </NavLink>
 
-        <NavLink to= "/docs">
-          <p onClick={() => setIsOpen(false)} className="mobile--links">Documentation</p> 
-           <hr />
+        <NavLink to="/documentation">
+          <p onClick={() => setIsOpen(false)} className="mobile--links">Documentation</p>
+          <hr />
         </NavLink>
 
-        <NavLink to= "/community">
-          <p onClick={() => setIsOpen(false)} className="mobile--links">Community</p> 
-           <hr />
+        <NavLink to="/community">
+          <p onClick={() => setIsOpen(false)} className="mobile--links">Community</p>
+          <hr />
         </NavLink>
 
         {user ? (
-            <>
-              <UserInfo />
-              <button>{logoutUser}</button>
-            </>
-          ) : (
-            <>
-              <Link to = "/login">
-                <button id="login--mobile">Login</button>
-              </Link>
+          <div>
+            <UserInfo />
+          </div>
+        ) : (
+          <>
+            <Link to="/login">
+              <button id="login--mobile">Login</button>
+            </Link>
 
-              <Link to = "/signup">
-                <button  id="signup--mobile">Sign Up</button>
-              </Link>
-            </>
-          )}
-      </div> 
-    
-     
+            <Link to="/signup">
+              <button id="signup--mobile">Sign Up</button>
+            </Link>
+          </>
+        )}
+      </div>
 
-  </div>
+
+
+    </div>
   );
 };
 
