@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link, useParams } from 'react-router-dom'
+import { Link, NavLink, useParams } from 'react-router-dom'
 import Heading from './api-components/Heading'
 import Paragraph from './api-components/Paragraph'
 import Image from './api-components/Image'
@@ -14,6 +14,7 @@ import Links from './api-components/Links'
 //images
 import shareIcon from '../../assets/images/share.png'
 import heartIcon from '../../assets/images/heart.png'
+import CodeBlock from './api-components/CodeBlock'
 
 
 
@@ -88,7 +89,7 @@ const DetailedDocs = () => {
                 <Link to={""}>  <img src={heartIcon} alt="nodejs" /> <span>like</span></Link>
               </div>
 
-              <CommentForm docId={detailedDocs.id} />
+              <CommentForm docId={detailedDocs.id} detailedDocs={detailedDocs} />
 
               {detailedDocs.comments.map((comment) => {
                 return (
@@ -98,9 +99,28 @@ const DetailedDocs = () => {
               })}
             </div>
             <div className="right__block">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat optio possimus inventore,
-                quasi temporibus saepe culpa. Itaque error veniam laboriosam ipsum tempora voluptate earum voluptatibus, odio consequatur, vero aut facere quasi rem eligendi illo blanditiis ex officiis cum assumenda!
-                Vitae architecto nam, quos quam adipisci iure? In repellendus ratione beatae?</p>
+              <div className='code__wrapper'>
+                <h6>
+                  Code Library
+                </h6>
+                <NavLink to={'/documentation'} className={({ isActive }) => (isActive ? "code_active" : "")}>
+                  Token Based Authentication
+                </NavLink>
+
+                <NavLink to={'/documentation'} className={({ isActive }) => (isActive ? "code_active" : "")}>
+                  Two-factor Authentication
+                </NavLink>
+
+                <NavLink to={'/documentation'} className={({ isActive }) => (isActive ? "code_active" : "")}>
+                  Multi-Factor Authentication
+                </NavLink>
+
+                <h6 style={{ marginTop: "2rem" }}>On This Page</h6>
+                {detailedDocs.blocks.map((bloc, index) => {
+                  if (bloc.type === "heading") return <CodeBlock content={bloc.content} key={index} />
+                  // else if (bloc.type === "subheading") return bloc.content
+                })}
+              </div>
             </div>
           </div>
 

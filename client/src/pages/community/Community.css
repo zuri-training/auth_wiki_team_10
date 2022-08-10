@@ -1,11 +1,19 @@
+#community__container{
+     padding: 5rem 10rem;
+    margin:10rem 3rem;
+}
 .block-1{
     text-align: center;
-    
-    padding-top:10rem;
     margin: auto;
 }
+
+.block-1 h1{
+    
+    font-size: 3.5rem;
+}
 .block-1 h1, .resources h4{
-    line-height: 1em;
+    font-weight: 700;
+    
 }
 .block-1 p{
     padding-top: 1.5rem;

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import DetailedDocs from '../DetailedDocs';
 
-const CommentForm = ({ docId }) => {
+const CommentForm = ({ detailedDocs, docId }) => {
     const [message, setMessage] = useState('');
 
     const handleSubmit = async (e) => {
@@ -38,7 +39,7 @@ const CommentForm = ({ docId }) => {
 
     return (
         <form action="" onSubmit={handleSubmit} className="comment__form">
-            <h3>Add a Comment</h3>
+            <h3> <img src={detailedDocs.author.imgUrl} alt="" /> Add a Comment</h3>
             <div className="area">
                 <textarea name="" id="" cols="50" rows="10" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type something..."></textarea>
                 <button type='submit'>send</button>

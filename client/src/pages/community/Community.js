@@ -3,7 +3,7 @@ import './Community.css'
 
 const Community = () => {
   return (
-    <main>
+    <main id='community__container'>
       <div className="block-1">
         <h1>Auth-Wiki Community</h1>
         <p>We provide access to a variety of Community Resources that aid your experiences.</p>
