@@ -241,6 +241,15 @@ form .inputControl {
   position: relative;
 }
 
+.error{
+  font-size: 0.7rem;
+  color: red;
+}
+
+.loading__state{
+  display: block;
+  font-weight: 500;
+}
 .eye, .eye-slash{
   width: 20px;
   position: absolute;

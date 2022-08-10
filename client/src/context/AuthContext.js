@@ -17,33 +17,27 @@ export const AuthProvider = ({ children }) => {
 
 
   const loginUser = async (email, password) => {
-    try {
-      const response = await fetch("https://auth-wiki-team10.herokuapp.com/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      });
+    const response = await fetch("https://auth-wiki-team10.herokuapp.com/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
 
-      const data = await response.json();
-      console.log(data)
+    const data = await response.json();
 
-      if (response.status === 200 || response.status === 201) {
-
-        setAuthTokens(data);
-        setUser(jwt_decode(data.accessToken))
-        localStorage.setItem("authTokens", JSON.stringify(data));
-        navigate("/");
-
-
-      }
-    } catch (error) {
-      //console.log(error)
-
+    if (response.status === 200 || response.status === 201) {
+      console.log("iran", response)
+      setAuthTokens(data);
+      setUser(jwt_decode(data.accessToken))
+      localStorage.setItem("authTokens", JSON.stringify(data));
+      navigate("/");
+    } else if (response.status === 400 || response.status === 401) {
+      setErrMsg('Invalid Login Details')
     }
   }
 
