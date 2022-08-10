@@ -38,8 +38,8 @@ export const AuthProvider = ({ children }) => {
         setUser(jwt_decode(data.accessToken))
         localStorage.setItem("authTokens", JSON.stringify(data));
         navigate("/");
-        
-        
+
+
       }
     } catch (error) {
       //console.log(error)
@@ -75,7 +75,7 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
-  
+
 
   const logoutUser = () => {
     setAuthTokens(null);
@@ -85,11 +85,11 @@ export const AuthProvider = ({ children }) => {
   };
 
 
-    // DOCUMENTATION
-  
+  // DOCUMENTATION
+
 
   // MAIN DOCUMENTATION
-  
+
 
 
 

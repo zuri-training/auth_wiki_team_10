@@ -106,7 +106,7 @@ const Documentation = () => {
               <p>
                 Get unlimited access to all of Auth-wiki features today, join us.
               </p>
-              <h1>Enhance your productivity, <span>Register Now!</span></h1>
+              <h1 style={{textAlign: 'center'}}>Enhance your productivity, <span>Register Now!</span></h1>
               <Link to={'/signup'}><button type="submit">Sign up</button></Link>
 
             </section>
