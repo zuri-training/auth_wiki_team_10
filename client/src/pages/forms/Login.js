@@ -12,8 +12,7 @@ import './Forms.css'
 import Exclamation from '../../assets/images/exclamation.png'
 import GoogleIcon from '../../assets/images/google-icon.png'
 import OfficeDesk from '../../assets/images/office-desk.png'
-import EyeFill from '../../assets/svgs/eye-fill.svg'
-import EyeSlash from '../../assets/svgs/eye-slash-fill.svg'
+import useTogglePassword from "../../utils/useTogglePassword"
 
 
 
@@ -23,6 +22,8 @@ import EyeSlash from '../../assets/svgs/eye-slash-fill.svg'
 const Login = () => {
   const { loginUser, errMsg } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(false);
+
+  const [PasswordInputType, ToggleIcon] = useTogglePassword()
 
 
 
@@ -67,9 +68,12 @@ const Login = () => {
             <div className="inputControl">
               <label htmlFor="password">Password</label>
               <div className="input">
-                <input id="password" name="password" type="password" />
-                <img src={EyeFill} alt="eye-fill" id="show" className="eye" />
-                <img src={EyeSlash} id="hide" alt="eye" className="eye-slash" />
+                <input id="password"
+                  name="password"
+                  type={PasswordInputType} />
+                <span className="password-toogle-icon">
+                  {ToggleIcon}
+                </span>
               </div>
               <div className="error__container">
                 <div className="err">
