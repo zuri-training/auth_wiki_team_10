@@ -1,7 +1,6 @@
 #docs__container{
     background-color: var(--whiteash);
-    padding: 0 10rem;
-    margin:10rem 3rem;
+    margin:8rem 3rem;
 }
 
 main #getting-started {
@@ -17,9 +16,8 @@ main #getting-started h1{
 }
 main #intro {
     width: inherit;
-    height: 136px;
     padding: 0 64px;
-    margin-bottom: 104px;
+    margin-bottom: 50px;
 }
 #docs__container h3 {
     margin-bottom: 16px;
@@ -102,4 +100,23 @@ main #intro {
 .signup button {
     
     margin-top: 85px;
+}
+@media screen and (max-width:850px) {
+    .section{
+        flex-direction: column;
+        margin-bottom: 0;
+    }    
+    .div1{
+        width: 100%;
+    }
+    #docs__container{
+        margin: 0 2%;
+    }
+    .div2{
+        width: 100%;
+    }
+    .top{
+        padding-top: 10px;
+        margin-bottom: 10px;
+    }
 }

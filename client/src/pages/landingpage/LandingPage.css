@@ -32,11 +32,11 @@
     height: 2rem;
     margin-left: 0.3rem;
     color: var(--grey-font);
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .form_search input::placeholder{
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .hero_section h1{
@@ -68,7 +68,7 @@
     color: var(--grey-font);
     font-weight: 400;
     margin-top: 30px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 30px auto 0 auto;
 }
 
@@ -89,11 +89,11 @@
 
 .form_email input{
     width: 65%;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .form_email input::placeholder{
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .form_email button{
@@ -101,7 +101,7 @@
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     padding: 0.8rem 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .traffic__container{
@@ -122,14 +122,14 @@
 }
 .traffic__item span{
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--white);    
 }
 
 .traffic__item p{
     text-transform: uppercase;
     margin-top: 1.5rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 /* END OF HERO SECTION */
@@ -176,7 +176,7 @@
 .auth__title p{
     color: #5C5C5C;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .brand__images{
@@ -214,7 +214,7 @@
 }
 
 .auth__title p{
-    font-size: 0.965rem;
+    font-size: 1rem;
 }
 
 .why__title__img{
@@ -247,6 +247,7 @@
     background: var(--white);
     border: 1px solid rgba(170, 187, 196, 1);
     border-radius: 0px 0px 75px 0px;
+    height: 280px;;
 }
 
 .why__container:nth-child(1)::after, .why__container:nth-child(2)::after{
@@ -259,20 +260,24 @@
     font-weight: 600;
     margin-bottom: 0.3rem;
     font-size: 1.25rem;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 
 .why__container span{
     position: absolute;
-    left: 25px;
+    left: 5%;
     right: 0;
     top: -38px;
     bottom: 0;
 }
 
+.why__container span img{
+    width: 70px;
+}
+
 .why__container p{
     line-height: 30px;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 /* End of Why Us */
@@ -298,7 +303,7 @@
 .atc__2 #atc__p{
     margin: auto;
     max-width: 600px;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .atc__icons{
@@ -371,7 +376,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 #atc__arr_btn img{
@@ -381,7 +386,7 @@
 #atc__arr_btn button{
     background: transparent;
     padding: 1rem 1.5rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 .ath__waitlist{
     padding-top: 1rem;
@@ -392,7 +397,7 @@
 }
 
 .form-control::placeholder{
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .form-control{
@@ -406,7 +411,7 @@
     width: 30%;
     display: flex;
     justify-content: center;
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 0.7rem 0;
 }
 
@@ -431,7 +436,7 @@
 }
 
 #auth__productivity p{
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #343434;
 }
@@ -484,7 +489,7 @@
 }
 
 .signup__btn{
-    font-size: 12.5px;
+    font-size: 1rem;
 }
 
 
