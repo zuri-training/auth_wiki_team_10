@@ -1,6 +1,8 @@
 footer{
     background: var(--hero-bg);
     padding:0 5%;
+    bottom: 0;
+    overflow: hidden;
 }
 
 .footer__flex{
