@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { Link, NavLink, useParams } from 'react-router-dom'
 import Heading from './api-components/Heading'
@@ -7,13 +7,13 @@ import Image from './api-components/Image'
 import Comments from './api-components/Comments'
 import CommentForm from './api-components/CommentForm'
 import DocsReaction from './api-components/DocsReaction'
+import AuthContext from "../../context/AuthContext";
 import './DetailedDocs.css'
 import Subheading from './api-components/Subheading'
+import Reactions from './api-components/Reactions'
 import Links from './api-components/Links'
 
 //images
-import shareIcon from '../../assets/images/share.png'
-import heartIcon from '../../assets/images/heart.png'
 
 import LikesIcon from '../../assets/images/likeyellow.png'
 import DownloadIcon from '../../assets/images/downloadIcon.png'
@@ -25,6 +25,7 @@ import CodeBlock from './api-components/CodeBlock'
 
 const DetailedDocs = () => {
   let { id } = useParams()
+  const { user } = useContext(AuthContext)
   const [detailedDocs, setDetailedDocs] = useState({})
   const [isLoading, setIsLoading] = useState(true)
 
@@ -88,25 +89,22 @@ const DetailedDocs = () => {
                 </div>
               </div>
 
-              <div className='download__links' id='share'>
-                <Link to={""}> <img src={shareIcon} alt="php" /> <span>share</span> </Link>
-                <Link to={""}> <img src={heartIcon} alt="nodejs" /> <span>like</span></Link>
-              </div>
+              <Reactions docId={detailedDocs.id} likes={detailedDocs.likes} disLikes={detailedDocs.disLikes} />
 
-              <CommentForm docId={detailedDocs.id} detailedDocs={detailedDocs} />
+              <CommentForm docId={detailedDocs.id} user={user} />
 
               <div className="community__says">
                 <h1 style={{ fontSize: "1.5rem" }}>What the Community says</h1>
                 <div className="community__says--icons" style={{ display: "flex", gap: "2rem", alignItems: "center", marginBottom: "4rem" }}>
-                  <div className="says__icon"><img src={DownloadIcon} alt="php" /> <small style={{ color: 'green' }}>1,500</small></div>
-                  <div className="says__icon"><img src={LikesIcon} alt="php" /> <small style={{ color: 'orange' }}>200</small></div>
-                  <div className="says__icon"><img src={CommentIcon} alt="php" /> <small style={{ color: 'red' }}>500</small></div>
+                  <div className="says__icon"><img src={DownloadIcon} alt="php" /> <small style={{ color: 'green' }}>0</small></div>
+                  <div className="says__icon"><img src={LikesIcon} alt="php" /> <small style={{ color: 'orange' }}>{detailedDocs.likes}</small></div>
+                  <div className="says__icon"><img src={CommentIcon} alt="php" /> <small style={{ color: 'red' }}>{detailedDocs.comments.length}</small></div>
                 </div>
               </div>
 
               {detailedDocs.comments.map((comment) => {
                 return (
-                  <Comments key={comment.id} content={comment} />
+                  <Comments key={comment.id} content={comment} user={user} myKey={comment.id} author={comment.author} />
                 )
 
               })}

@@ -75,13 +75,10 @@
 
 @media screen and (max-width: 1100px){
     .navigation__left--links,
-    .navigation__right button#signup{
+    .navigation__right button{
         display: none;
     }   
 
-    .navigation__right button#login{
-        padding: 1rem 3rem;
-    }
 
     .navigation__right__mobile{
         display: block;
@@ -125,8 +122,5 @@
 @media screen and (max-width: 1340px){
     .navigation__left--links{
         margin-left: 0;
-    }
-    .navigation__right button{
-        padding: 1rem 1.5rem;
     }
 }

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import { Link } from 'react-router-dom';
 
 //CSS file
@@ -15,8 +16,39 @@ import MiniButton2 from '../../assets/svgs/Mini Button-2.svg'
 import MiniButton3 from '../../assets/svgs/Mini Button-3.svg'
 
 const Footer = () => {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+
+    const handleContact = async (e) => {
+        e.preventDefault()
+
+
+        try {
+            const url = `https://auth-wiki-team10.herokuapp.com/api/email/contact-us/`
+            const response = await axios({
+                method: "POST",
+                url,
+                data: {
+                    name,
+                    email,
+                    message,
+                },
+                // headers: { Authorization: `Bearer ${token.accessToken}` },
+            });
+            setMessage('')
+            alert("message sent")
+            window.location.reload(false);
+
+        } catch (error) {
+            console.log('get doc error', error)
+        }
+
+    }
+
     return (
-        <div>{/* Beginning of footer */}
+        <div>
+            {/* Beginning of footer */}
             <footer>
                 <div className="footer__flex">
                     <div className="footer__about">
@@ -43,12 +75,12 @@ const Footer = () => {
 
                     <div className="footer__about">
 
-                        <form action="">
+                        <form onSubmit={handleContact}>
                             <h5>Contact Us</h5>
                             <p>We usually respond before 24 hours.</p>
-                            <input type="text" placeholder="Name" name="" id="" style={{ background: "white" }} />
-                            <input type="email" placeholder="E-mail" name="" id="" style={{ background: "white" }} />
-                            <textarea name="" placeholder="Your Message" id="" cols="5" rows="3"></textarea>
+                            <input type="text" placeholder="Name" name="" id="name" style={{ background: "white" }} required value={name} onChange={(e) => setName(e.target.value)} />
+                            <input type="email" placeholder="E-mail" name="" id="email" style={{ background: "white" }} required value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <textarea name="" placeholder="Your Message" id="message" cols="5" rows="3" required value={message} onChange={(e) => setMessage(e.target.value)} />
                             <button type="submit">Submit</button>
                         </form>
                     </div>

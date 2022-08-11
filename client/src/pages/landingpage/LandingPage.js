@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios'
 
 //CSS file
 import "./LandingPage.css";
@@ -29,6 +30,29 @@ import Php from "../../assets/svgs/g3438.svg";
 import Arrow2 from "../../assets/svgs/atc__arrow.svg";
 
 const LandingPage = () => {
+  const [email, setEmail] = useState('')
+  const handleNewsletter = async (e) => {
+    e.preventDefault()
+
+
+    try {
+      const url = `https://auth-wiki-team10.herokuapp.com/api/email/newsletter/`
+      const response = await axios({
+        method: "POST",
+        url,
+        data: {
+          email,
+        },
+        // headers: { Authorization: `Bearer ${token.accessToken}` },
+      });
+      setEmail('')
+      //window.location.reload(false);
+      alert("successful")
+    } catch (error) {
+      console.log('get doc error', error)
+    }
+
+  }
   return (
     <div className="landingpage">
 
@@ -44,9 +68,9 @@ const LandingPage = () => {
           for developers. Extremely flexible and modular, Auth wiki codes can be
           dropped into any Express based Web application for use.
         </p>
-        <form className="form_email">
-          <input type="email" placeholder="Enter Email" />
-          <button>Get Started</button>
+        <form className="form_email" onSubmit={handleNewsletter}>
+          <input type="email" placeholder="Enter Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+          <button>Subscribe</button>
         </form>
 
         <div className="traffic__container">
