@@ -1,85 +1,432 @@
-# Auth Wiki Project.
-# Team 10
-Codebase for Authe Wiki - Team 10
-<br>
-
-## Overview
-In this project, we're building an Wiki Platform that has authentication codes that developers can download and use in their own projects. 
-
-<!-- ### Directory Structure
-- ***Frontend:*** Frontend code is found in the `client` directory.
-- ***Backend:*** Backend code is found in the `server` directory. -->
-
-### Project Links
-
-- Design Link - https://www.figma.com/file/rim5Uin1lkaLl0JD5rhcf5/Zuri-Project-File
-- User Research (FigJam) - https://www.figma.com/file/S2PHA3zmeX0YrjdURVvc1T/User-Flow-and-Persona?node-id=0%3A1
-- Research Plan - https://docs.google.com/document/d/1YRUBBkxGBJi_lNgeBntg_zOmapn0gqi5e-P8YZ8k3ak/edit?usp=sharing
-- Frontend - In the `/client` folder
-
-<!--
-### How to contribute
-Follow these steps if you want to contribute to this project:
-- Fork the repository. Open your terminal and clone the forked repo locally.
-- Navigate to the folder and open in your text editor
-- On your terminal, set upstream branch:
+# Auth Wiki backend [NestJs]
+## API DOCUMENTATION
+Hosted on Heroku on the domain: https://auth-wiki-team10.herokuapp.com
+### AUTH
+#### 1) SIGN UP:
+  Registers a new user
   ```js
-    git remote add upstream https://github.com/zuri-training/auth_wiki_team_10.git
+    POST https://auth-wiki-team10.herokuapp.com/api/auth/register/
   ```
-- Pull upstream: `git pull upstream dev`
-- Create a branch for the feauture you're working on `git checkout -b <feature-name>`
-- After making changes, stage all the changes you have made locally for a commit by running `git add <file-names>`
-- Commit your changes with a descriptive commit message `git commit -m "your commit message"`
-- Before you push to your changes always make sure that your branch is always up-to-date in other to avoid merge conflicts: `git pull upstream dev`
-- After making sure your branch is up-to-date, push the new changes to your new branch: `git push origin <your-current-branch-name>`
-- Create a pull request to the dev branch
-- ***DO NOT*** merge your PRs. They'll be reviewed and merged.
+  - **Body**
+  ```js
+    {
+      "name": "Hamsa",
+      "email": "has@hamsa.com",
+      "password": "password"
+    }
+  ```
+  - **Response**: User object
+  - **Status code**: `200`
+  ```js
+    {
+      "id": "62ef57b6eca28200167a2860"
+      "name": "Hamsa",
+      "email": "has@hamsa.com",
+      "createdAt": "2022-08-07T06:12:06.617Z",
+    }
+  ```
+#### 2) LOG IN:
+  Logs in user
+  ```js
+    POST https://auth-wiki-team10.herokuapp.com/api/auth/login/
+  ```
+  - **Body**
+  ```js
+    {
+      "email": "has@hamsa.com",
+      "password": "password",
+    }
+  ```
+  - **Response**: access token and refresh token
+  - **Status code**: `200`
+  ```js
+    {
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJpZCI6IjYyZWY0OTQ0NDY1NTRjMzM5ODc1MzlmZiIsIm5hbWUiOiJIYW1zYSIsImVtYWlsIjoiaGFtc2FAaGFtc2EuY29tIiwiaWF0IjoxNjU5ODUyODkyLCJleHAiOjE2NTk4ODg4OTJ9.x7HHawUwvGdsiPfmUangVVFBezHy8XB-Br-eSQYDoSA",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZWY0OTQ0NDY1NTRjMzM5ODc1MzlmZiIsIm5hbWUiOiJIYW1zYSIsImVtYWlsIjoiaGFtc2FAaGFtc2EuY29tIiwiaWF0IjoxNjU5ODUyODkyLCJleHAiOjE2NjAwMjU2OTJ9.YoxfQNhG3WZLvdn_WL0mK8nFsnYauz_vBCDriaIOdmY"
+    }
+  ```
+#### 3) REFRESH ACCESS TOKEN:
+  Refreshes access token
+  ```js
+    POST https://auth-wiki-team10.herokuapp.com/api/auth/refresh/
+  ```
+  - **Body**
+  ```js
+    {
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZWVmYmUwZmE4YmQ2NGRhY2Y5NDg1ZiIsIm5hbWUiOiJGYWxlbmNlIExlbXUiLCJlbWFpbCI6ImxlbXVAbGVtdS5jb20iLCJpYXQiOjE2NTk4MjkzNjgsImV4cCI6MTY2MDAwMjE2OH0.EhQvM6CHmEs50M9wI45pWxLXbFyRPXCDRcQn52VQ07I",
+    }
+  ```
+  - **Response**: access token and refresh token
+  - **Status code**: `200`
+  ```js
+    {
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJpZCI6IjYyZWY0OTQ0NDY1NTRjMzM5ODc1MzlmZiIsIm5hbWUiOiJIYW1zYSIsImVtYWlsIjoiaGFtc2FAaGFtc2EuY29tIiwiaWF0IjoxNjU5ODUyODkyLCJleHAiOjE2NTk4ODg4OTJ9.x7HHawUwvGdsiPfmUangVVFBezHy8XB-Br-eSQYDoSA",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZWY0OTQ0NDY1NTRjMzM5ODc1MzlmZiIsIm5hbWUiOiJIYW1zYSIsImVtYWlsIjoiaGFtc2FAaGFtc2EuY29tIiwiaWF0IjoxNjU5ODUyODkyLCJleHAiOjE2NjAwMjU2OTJ9.YoxfQNhG3WZLvdn_WL0mK8nFsnYauz_vBCDriaIOdmY"
+    }
+  ```
+------------------------------------------------------------------------------------------------------
+#### DOC
+#### 1) CREATE DOC:
+  Create a new documentation
+  ```js
+    POST https://auth-wiki-team10.herokuapp.com/api/docs/
+  ```
+  - **Body**
+  ```js
+    {
+      "title": "New ones",
+      "description": "Some description",
+      "date_created": "2022-08-04",
+      "blocks": [
+        {
+          "type": "heading",
+          "content": "Kotlin Variables"
+        },
+        {
+          "type": "paragraph",
+          "content": "Lorem ipsum dolor sit amet consectetur."
+        },
+        {
+          "type": "image",
+          "content": "/image005.jpg"
+        },
+        {
+          "type": "paragraph",
+          "content": "Lorem ipsum dolor sit amet consectetur."
+        },
+        {
+          "type": "code",
+          "language": "kotlin",
+          "content": "def register() {\n\tprint(\"Hello World!\")\n}"
+        }
+      ]
+    }
+  ```
+  - **Response**: Documentation object
+  - **Status code**: `200`
+  ```js
+    {
+      "id": "62ef499646554c3398753a02",
+      "title": "New ones",
+      "description": "Some description",
+      "author": {
+        "name": "Hamsa",
+        "email": "hamsa@hamsa.com",
+        "id": "62ef494446554c33987539ff",
+        "createdAt": "2022-08-07T05:10:28.309Z"
+      },
+      "blocks": [
+        {
+          "type": "heading",
+          "content": "Kotlin Variables"
+        },
+        {
+          "type": "paragraph",
+          "content": "Lorem ipsum dolor sit amet consectetur."
+        },
+        {
+          "type": "image",
+          "content": "/image005.jpg"
+        },
+        {
+          "type": "paragraph",
+          "content": "Lorem ipsum dolor sit amet consectetur."
+        },
+        {
+          "type": "code",
+          "language": "kotlin",
+          "content": "def register() {\n\tprint(\"Hello World!\")\n}"
+        }
+      ],
+      "createdAt": "2022-08-07T05:11:50.109Z",
+    }
+  ```
+#### 2) LIST DOCS:
+  Gets a list of documentations
+  ```js
+    GET https://auth-wiki-team10.herokuapp.com/api/docs/
+  ```
+  - **Body**
+  ```js
+    { }
+  ```
+  - **Response**: List (array) of documentations
+  - **Status code**: `200`
+  ```js
+    [
+      {
+        "id": "62ef499646554c3398753a02",
+        "title": "New ones",
+        "description": "Some description",
+        "author": {
+          "name": "Hamsa",
+          "email": "hamsa@hamsa.com",
+          "id": "62ef494446554c33987539ff",
+          "createdAt": "2022-08-07T05:10:28.309Z"
+        },
+        "blocks": [
+          {
+            "type": "heading",
+            "content": "Kotlin Variables"
+          },
+          {
+            "type": "paragraph",
+            "content": "Lorem ipsum dolor sit amet consectetur."
+          },
+          {
+            "type": "image",
+            "content": "/image005.jpg"
+          },
+          {
+            "type": "paragraph",
+            "content": "Lorem ipsum dolor sit amet consectetur."
+          },
+          {
+            "type": "code",
+            "language": "kotlin",
+            "content": "def register() {\n\tprint(\"Hello World!\")\n}"
+          }
+        ],
+        "createdAt": "2022-08-07T05:11:50.109Z",
+      },
+      {
+        "id": "62ef499646554c3398753a02",
+        "title": "New ones",
+        "description": "Some description",
+        "author": {
+          "name": "Hamsa",
+          "email": "hamsa@hamsa.com",
+          "id": "62ef494446554c33987539ff",
+          "createdAt": "2022-08-07T05:10:28.309Z"
+        },
+        "blocks": [
+          {
+            "type": "heading",
+            "content": "Kotlin Variables"
+          },
+          {
+            "type": "paragraph",
+            "content": "Lorem ipsum dolor sit amet consectetur."
+          },
+          {
+            "type": "image",
+            "content": "/image005.jpg"
+          },
+          {
+            "type": "paragraph",
+            "content": "Lorem ipsum dolor sit amet consectetur."
+          },
+          {
+            "type": "code",
+            "language": "kotlin",
+            "content": "def register() {\n\tprint(\"Hello World!\")\n}"
+          }
+        ],
+        "createdAt": "2022-08-07T05:11:50.109Z",
+      },
+      ...
+    ]
+  ```
 
-### Server (backend) Setup and Installation
-Follow these steps to setup and run server:
-- In the root directory of this project, create a virtual environment 
+#### 3) GET A DOC:
+  Get a documentation by id
   ```js
-    python -m venv my-env
+    GET https://auth-wiki-team10.herokuapp.com/api/docs/{id}
   ```
-- Activate the just created virtual environment (I'll recommend you run this code in a Git bash terminal. It won't work on windows) 
+  - **Body**
   ```js
-    source my-env/Scripts/activate
+    { }
   ```
-- Make a copy of the `.env examples` file found in the `config` directory. Rename that copy to `.env`. That's where you'd put all future environment variable/configs
-- Install all packages
+  - **Response**: Documentation object including an array of all comments associated to the documentation
+  - **Status code**: `200`
   ```js
-    pip install -r requirements.txt
+    {
+      "id": "62ef5dab39fc51001607053c",
+      "title": "New ones",
+      "description": "Some description",
+      "createdAt": "2022-08-07T06:37:31.154Z",
+      "author": {
+        "name": "Hamsa",
+        "email": "hamsa@hamsa.com",
+        "createdAt": "2022-08-07T05:10:28.309Z"
+      },
+      "likes": 5,
+      "dislikes" 2,
+      "blocks": [
+        {
+          "type": "heading",
+          "content": "Kotlin Variables"
+        },
+        {
+          "type": "paragraph",
+          "content": "Lorem ipsum dolor sit amet consectetur."
+        },
+        {
+          "type": "image",
+          "content": "/image005.jpg"
+        },
+        {
+          "type": "paragraph",
+          "content": "Lorem ipsum dolor sit amet consectetur."
+        },
+        {
+          "type": "code",
+          "content": "def register() {\n\tprint(\"Hello World!\")\n}"
+        }
+      ],
+      "comments": [
+        {
+          "message": "one more",
+          "docId": "62ef5dab39fc51001607053c",
+          "author": {
+            "name": "Hamsa"
+          },
+          "id": "62ef5ea339fc51001607053e",
+          "createdAt": "2022-08-07T06:41:39.568Z"
+        },
+        {
+          "message": "Simply clean code",
+          "docId": "62ef5dab39fc51001607053c",
+          "author": {
+            "name": "Hamsa"
+          },
+          "id": "62ef5eae39fc51001607053f",
+          "createdAt": "2022-08-07T06:41:50.197Z"
+        },
+        {
+          "message": "Horrible",
+          "docId": "62ef5dab39fc51001607053c",
+          "author": {
+            "name": "Hamsa"
+          },
+          "id": "62ef5eb439fc510016070540",
+          "createdAt": "2022-08-07T06:41:56.497Z"
+        }
+      ]
+    }
   ```
-- Download and install (MongoDB)[https://www.mongodb.com/try/download/community].
-- Download (MongoDB Compass)[https://www.mongodb.com/try/download/compass].
-- If you're confused at this point, please checkout (this tutorial on how to download and setup Mongodb)[https://www.youtube.com/watch?v=FwMwO8pXfq0]
-- Watch this tutorial on (how to install and setup MongoDB Compass)[https://www.youtube.com/watch?v=ydXCcLAi5aU]
-- Then create a mongoDB database locally called `auth_wiki`.
-- Run migrations `python manage.py migrate`.
-- Run server `python manage.py runserver`.
-- ***NOTE:*** Whenever you install a new package to the project run 
+#### 4) EDIT A DOC:
+  Edits a documentation
   ```js
-    pip freeze --local requirements.txt
+    PUT https://auth-wiki-team10.herokuapp.com/api/docs/{id}/edit
   ```
-  -->
-  
- 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  - **Body**
+  ```js
+    {
+      "title": "Hey",
+      "description": "The atlantic shores",
+      "date_created": "2022-08-04",
+      "blocks": [
+        {
+          "type": "heading",
+          "content": "Cameroon things"
+        },
+        {
+          "type": "paragraph",
+          "content": "Lorem ipsum dolor sit amet consectetur."
+        }
+      ]
+    }
+  ```
+  - **Response**: New documentation object
+  - **Status code**: `200`
+  ```js
+    {
+      "id": "62ef499646554c3398753a02",
+      "title": "Hey",
+      "description": "The atlantic shores",
+      "date_created": "2022-08-04",
+      "blocks": [
+        {
+          "type": "heading",
+          "content": "Cameroon things"
+        },
+        {
+          "type": "paragraph",
+          "content": "Lorem ipsum dolor sit amet consectetur."
+        }
+      ]
+    }
+  ```
+#### 5) DELETE A DOC:
+  Delete a documentation and all comments associated to it
+  ```js
+    PUT https://auth-wiki-team10.herokuapp.com/api/docs/{id}/delete
+  ```
+  - **Body**
+  ```js
+    { }
+  ```
+  - **Response**: Empty response
+  - **Status code**: `200`
+  ```js
+    { }
+  ```
+
+------------------------------------------------------------------------------------------------------
+#### COMMENT
+#### 1) CREATE COMMENT:
+  Creates a comment for a particilar documentation
+  ```js
+    POST https://auth-wiki-team10.herokuapp.com/api/comments/
+  ```
+  - **Body**
+  ```js
+    {
+      "docId": "62ef499646554c3398753a02",
+      "message": "Wow! Thanks for this code! It works well."
+    }
+  ```
+  - **Response**: Empty response
+  - **Status code**: `200`
+  ```js
+    { }
+  ```
+#### 2) DELETE COMMENT:
+  Deletes a comment by id
+  ```js
+    DELETE https://auth-wiki-team10.herokuapp.com/api/comments/{id}/delete
+  ```
+  - **Body**
+  ```js
+    { }
+  ```
+  - **Response**: Empty response
+  - **Status code**: `200`
+  ```js
+    { }
+  ```
+
+------------------------------------------------------------------------------------------------------
+#### REACTION
+#### 1) CREATE REACTION:
+  Creates a reaction for a particilar documentation. `true` for like and `false` for dislike
+  ```js
+    POST https://auth-wiki-team10.herokuapp.com/api/reactions/
+  ```
+  - **Body**
+  ```js
+    {
+      "docId": "62ef499646554c3398753a02",
+      "isLike": true
+    }
+  ```
+  - **Response**: Empty response
+  - **Status code**: `200`
+  ```js
+    { }
+  ```
+#### 2) DELETE REACTION:
+  Deletes a reaction by id
+  ```js
+    DELETE https://auth-wiki-team10.herokuapp.com/api/reactions/{id}/delete
+  ```
+  - **Body**
+  ```js
+    { }
+  ```
+  - **Response**: Empty response
+  - **Status code**: `200`
+  ```js
+    { }
+  ```
