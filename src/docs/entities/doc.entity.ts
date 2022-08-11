@@ -37,16 +37,21 @@ export class Doc {
   @Column({ default: 0 })
   disLikes: number;
 
+  @Column({ default: '' })
+  downloadLink: string;
+
   constructor(
     title: string,
     description: string,
     author: User,
     blocks: Block[],
+    downloadLink: string,
   ) {
     this.title = title;
     this.description = description;
     this.author = author;
     this.blocks = blocks;
+    this.downloadLink = downloadLink;
   }
 }
 

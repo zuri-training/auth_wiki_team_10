@@ -26,7 +26,13 @@ export class DocsService {
   ) {}
 
   async createDoc(dto: CreateDocDto, user: User): Promise<Doc> {
-    let doc = new Doc(dto.title, dto.description, user, dto.blocks);
+    let doc = new Doc(
+      dto.title,
+      dto.description,
+      user,
+      dto.blocks,
+      dto.downloadLink,
+    );
     doc = await this.repository.save(doc);
     return doc;
   }
