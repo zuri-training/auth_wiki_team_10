@@ -292,7 +292,7 @@ form .inputControl {
     padding: 0 6%;
   }
   form{
-    width: 90vw;
+    width: 70vw;
     margin: auto; 
   }
   form .inputControl input, form .inputControl .input input{
@@ -315,4 +315,10 @@ form .inputControl {
   #control{
     margin-top: 50px;
   }
+}
+@media  (max-width:550px) {
+  form{
+    width:85vw;
+  }
+  
 }
