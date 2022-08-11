@@ -63,11 +63,17 @@ a{
     margin-left: 0;
 }
 
-#share a{
-padding: 0.5rem 1rem; 
+#share button {
+padding: 0.3rem 0.6rem; 
 font-size: 0.8rem;
+background-color: transparent;
+color: var(--primary-color);
 }
 
+#share button img{
+    height: 24px;
+    width: 24px;
+}
 
 /* comments */
 .comment__form{
@@ -153,5 +159,12 @@ font-size: 0.8rem;
 .codeblock__component:hover,
 .code__wrapper a:hover{
     color: var(--primary-color);
+}
+
+.user__img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 

@@ -1,0 +1,12 @@
+.user__btn{
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+
+.logout{
+    width: 24px;
+    height: 24px;
+    filter: invert(21%) sepia(94%) saturate(6002%) hue-rotate(356deg) brightness(101%) contrast(125%);
+}
+

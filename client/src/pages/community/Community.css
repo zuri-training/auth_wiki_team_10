@@ -33,7 +33,7 @@
     width: 60%;
 }
 .left_texts-1{
-    display: none;
+    /* display: none; */
     flex-direction: column;
     gap: 35px;
     margin: 0 0 50px 0;
@@ -60,12 +60,12 @@
     justify-content:space-between;
     cursor: pointer;
 }
-.block-5 h3::after, .block-6 h3::after, .block-7 h3::after, .block-8 h3::after, .block-9 h3::after{
-    /* content: url(../../assets/svgs/arrow-down.svg); */
+/* .block-5 h3::after, .block-6 h3::after, .block-7 h3::after, .block-8 h3::after, .block-9 h3::after{
+    content: url(../../assets/svgs/arrow-down.svg);
     display:inline-flex;
-}
+} */
 .q1.dropped::after, .q2.dropped::after, .q3.dropped::after, .q4.dropped::after, .q5.dropped::after{
-    /* content: url(../../assets/svgs/arrow-down.svg); */
+     content: url(../../assets/svgs/arrow-down.svg); 
     display:inline-flex;
     transform: rotate(180deg);
 }
@@ -118,7 +118,7 @@
 }
 
 .resources p::before{
-    /* content: url(../../assets/svgs/boxed-arrow-light.svg); */
+    content: url(../../assets/svgs/boxed-arrow-light.svg); 
     padding-right: 12px;
     display: inline-flex;
     align-items: center;
@@ -128,7 +128,7 @@
     color: var(--button-bg);
 }
 .community.active::before, .faq.active::before{
-    /* content: url(./images/boxed-arrow-dark.svg); */
+     content: url(../../assets/svgs/boxed-arrow-dark.svg); 
     padding-right: 12px;
     display: inline-flex;
     align-items: center;

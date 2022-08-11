@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import DetailedDocs from '../DetailedDocs';
 
-const CommentForm = ({ detailedDocs, docId }) => {
+const CommentForm = ({ docId, user }) => {
     const [message, setMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
+
         try {
             const url = `https://auth-wiki-team10.herokuapp.com/api/comments/`
             //1. Get accessToken from localstorage
@@ -24,12 +26,14 @@ const CommentForm = ({ detailedDocs, docId }) => {
                 headers: { Authorization: `Bearer ${token.accessToken}` },
             });
             setMessage('')
-            //window.location.reload(false);
-            console.log(response.data)
+            alert("comment added")
+            window.location.reload(false);
         } catch (error) {
             console.log('get doc error', error)
         }
+
     }
+
 
 
     useEffect(() => {
@@ -39,9 +43,9 @@ const CommentForm = ({ detailedDocs, docId }) => {
 
     return (
         <form action="" onSubmit={handleSubmit} className="comment__form">
-            <h3> <img src={detailedDocs.author.imgUrl} alt="" /> Add a Comment</h3>
+            <h3 className='user__info'> <img src={user.imgUrl} alt="" className='user__img' /> <span> Add a Comment</span></h3>
             <div className="area">
-                <textarea name="" id="" cols="50" rows="10" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type something..."></textarea>
+                <textarea name="" id="" cols="50" rows="10" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type something..." required></textarea>
                 <button type='submit'>send</button>
             </div>
 

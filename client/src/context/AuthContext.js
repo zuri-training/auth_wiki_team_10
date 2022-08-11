@@ -36,6 +36,7 @@ export const AuthProvider = ({ children }) => {
       setAuthTokens(data);
       setUser(jwt_decode(data.accessToken))
       localStorage.setItem("authTokens", JSON.stringify(data));
+      alert("login successful")
       navigate("/");
     } else if (response.status === 400 || response.status === 401) {
       setErrMsg('Invalid Login Details')
@@ -56,6 +57,7 @@ export const AuthProvider = ({ children }) => {
           password,
         }),
       })
+      alert("signup successful")
       navigate("/login")
       //console.log(response)
     } catch (err) {
