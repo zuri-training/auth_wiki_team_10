@@ -35,7 +35,7 @@ const Signup = () => {
 
       <div className="auth__container--right">
         <div>
-          <h2>Create An Account...</h2>
+          <h2 className='signUp'>Create An Account...</h2>
           <p>Get started with us</p>
           {isLoading && <div className="loading__state">Loading ...</div>}
           {errMsg && <span className="error"><img src={Exclamation} alt="exclamation" />{errMsg}</span>}
