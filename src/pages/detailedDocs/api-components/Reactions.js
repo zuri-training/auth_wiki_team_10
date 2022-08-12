@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import shareIcon from '../../../assets/images/share.png'
 import Likes from '../../../assets/images/like.png'
@@ -6,15 +6,11 @@ import Dislikes from '../../../assets/images/dislike.png'
 
 
 const Reactions = ({ docId, likes, disLikes }) => {
-    const [liked, setLiked] = useState(likes)
-    const [disliked, setDisliked] = useState(disLikes)
-
-
     const handleLike = async () => {
         try {
             const url = `https://auth-wiki-team10.herokuapp.com/api/reactions/`
             const token = JSON.parse(localStorage.getItem("authTokens"))
-            const response = await axios({
+            await axios({
                 method: "POST",
                 url,
                 data: {
@@ -23,6 +19,7 @@ const Reactions = ({ docId, likes, disLikes }) => {
                 },
                 headers: { Authorization: `Bearer ${token.accessToken}` },
             });
+
             window.location.reload(false);
         } catch (error) {
             console.log('get doc error', error)
@@ -34,7 +31,7 @@ const Reactions = ({ docId, likes, disLikes }) => {
             const url = `https://auth-wiki-team10.herokuapp.com/api/reactions/`
             const token = JSON.parse(localStorage.getItem("authTokens"))
 
-            const response = await axios({
+            await axios({
                 method: "POST",
                 url,
                 data: {

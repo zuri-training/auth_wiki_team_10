@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
           password,
         }),
       })
-      alert("signup successful")
+      alert(response, " signup successful")
       navigate("/login")
 
     } catch (err) {

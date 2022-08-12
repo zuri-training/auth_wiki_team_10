@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import axios from 'axios';
 import Likes from '../../../assets/images/like.png'
 import Dislikes from '../../../assets/images/dislike.png'

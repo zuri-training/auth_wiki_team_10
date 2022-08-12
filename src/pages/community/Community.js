@@ -63,7 +63,7 @@ const Community = () => {
             </div>
           ) : (
             <div className="left_texts-1">
-              <h2 className="text">FAQ's</h2>
+              <h2 className="text">FAQs</h2>
               <div className="blocks">
                 <div className="block-5">
                   <h3> <span>What is Multi-Factor Authentication?</span>  <img src={showAns ? Minimize : DropIcon} alt="" onClick={showAnswers} /> </h3>

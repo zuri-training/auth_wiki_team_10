@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import DetailedDocs from '../DetailedDocs';
-
 const CommentForm = ({ docId, user }) => {
     const [message, setMessage] = useState('');
 
@@ -13,7 +11,7 @@ const CommentForm = ({ docId, user }) => {
             const url = `https://auth-wiki-team10.herokuapp.com/api/comments/`
             const token = JSON.parse(localStorage.getItem("authTokens"))
 
-            const response = await axios({
+            await axios({
                 method: "POST",
                 url,
                 data: {
