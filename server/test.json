@@ -1,0 +1,28 @@
+{
+  "title": "How to use Kotlin",
+  "description": "Some description",
+  "date_created": "2022-08-04",
+  "blocks": [
+    {
+      "type": "heading",
+      "content": "Kotlin Variables"
+    },
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet consectetur."
+    },
+    {
+      "type": "image",
+      "content": "/image005.jpg"
+    },
+    {
+      "type": "paragraph",
+      "content": "Lorem ipsum dolor sit amet consectetur."
+    },
+    {
+      "type": "code",
+      "language": "kotlin",
+      "content": "def register() {\n\tprint(\"Hello World!\")\n}"
+    }
+  ]
+}
