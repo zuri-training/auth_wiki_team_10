@@ -48,7 +48,8 @@ export class AuthController {
   }
 
   @Get('/test')
-  test(@GetUser() user: User, @Req() req) {
-    console.log(req.hostname);
+  test() {
+    // console.log(req.hostname);
+    return 'Welcome to Auth Wiki Team 10';
   }
 }
