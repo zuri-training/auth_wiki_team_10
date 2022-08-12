@@ -30,7 +30,7 @@ const CommentForm = ({ docId, user }) => {
     }
 
 
-
+    // eslint-disable-next-line
     useEffect(() => {
         handleSubmit()
     }, [])
