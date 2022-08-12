@@ -32,7 +32,6 @@ export const AuthProvider = ({ children }) => {
     const data = await response.json();
 
     if (response.status === 200 || response.status === 201) {
-      console.log("iran", response)
       setAuthTokens(data);
       setUser(jwt_decode(data.accessToken))
       localStorage.setItem("authTokens", JSON.stringify(data));
@@ -57,9 +56,9 @@ export const AuthProvider = ({ children }) => {
           password,
         }),
       })
-      alert("signup successful")
+      alert(response, " signup successful")
       navigate("/login")
-      //console.log(response)
+
     } catch (err) {
       if (!err?.response) {
         setErrMsg('No Server Response');

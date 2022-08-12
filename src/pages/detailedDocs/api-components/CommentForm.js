@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import DetailedDocs from '../DetailedDocs';
-
 const CommentForm = ({ docId, user }) => {
     const [message, setMessage] = useState('');
 
@@ -11,12 +9,9 @@ const CommentForm = ({ docId, user }) => {
 
         try {
             const url = `https://auth-wiki-team10.herokuapp.com/api/comments/`
-            //1. Get accessToken from localstorage
             const token = JSON.parse(localStorage.getItem("authTokens"))
-            //return console.log(token.accessToken)
-            //2. Do the request
 
-            const response = await axios({
+            await axios({
                 method: "POST",
                 url,
                 data: {
@@ -35,7 +30,7 @@ const CommentForm = ({ docId, user }) => {
     }
 
 
-
+    // eslint-disable-next-line
     useEffect(() => {
         handleSubmit()
     }, [])

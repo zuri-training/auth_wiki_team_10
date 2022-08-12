@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import axios from 'axios';
 import Likes from '../../../assets/images/like.png'
 import Dislikes from '../../../assets/images/dislike.png'
@@ -14,15 +14,13 @@ const Comments = ({ content, user, myKey, author }) => {
       const url = `https://auth-wiki-team10.herokuapp.com/api/comments/${myKey}/delete/`
       //1. Get accessToken from localstorage
       const token = JSON.parse(localStorage.getItem("authTokens"))
-      //return console.log(token.accessToken)
-      //2. Do the request
 
       const response = await axios({
         method: "DELETE",
         url,
         headers: { Authorization: `Bearer ${token.accessToken}` },
       });
-      alert("message deleted")
+      alert(response, " message deleted")
       window.location.reload(false);
     } catch (error) {
       console.log('get doc error', "not working")

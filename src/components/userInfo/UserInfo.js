@@ -5,7 +5,7 @@ import './UserInfo.css'
 
 const UserInfo = () => {
   const { user, logoutUser } = useContext(AuthContext)
-  console.log(user)
+
   return (
     <div>
       <span style={{ color: "white", marginRight: "5px" }}>Hello, {user.name} <img src={user.imgUrl} alt="" className='user__img' />  </span>

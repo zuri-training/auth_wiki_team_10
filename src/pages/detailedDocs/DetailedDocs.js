@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
-import { Link, NavLink, useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import Heading from './api-components/Heading'
 import Paragraph from './api-components/Paragraph'
 import Image from './api-components/Image'
 import Comments from './api-components/Comments'
 import CommentForm from './api-components/CommentForm'
-import DocsReaction from './api-components/DocsReaction'
 import AuthContext from "../../context/AuthContext";
 import './DetailedDocs.css'
 import Subheading from './api-components/Subheading'
@@ -33,17 +32,12 @@ const DetailedDocs = () => {
   const getDetailedDocs = async () => {
     try {
       const url = `https://auth-wiki-team10.herokuapp.com/api/docs/${id}`
-      //1. Get accessToken from localstorage
       const token = JSON.parse(localStorage.getItem("authTokens"))
-      //return console.log(token.accessToken)
-      //2. Do the request
+
 
       const response = await axios.get(url, {
         headers: { Authorization: `Bearer ${token.accessToken}` }
       });
-
-      //3.Check response object
-      console.log(response.data)
       setDetailedDocs(response.data)
       setIsLoading(false)
     } catch (error) {
@@ -55,7 +49,6 @@ const DetailedDocs = () => {
   useEffect(() => {
     getDetailedDocs()
   }, [])
-
 
   return (
     <div className="detaileddoc__container">
@@ -85,11 +78,7 @@ const DetailedDocs = () => {
                 <h1>Download Code sample</h1>
                 <p>Get a copy of the Authentication code for personal use anytime for the three languages.</p>
                 <div className="downloadLinks">
-                  <Links 
-                    downloadLinkPython={detailedDocs.downloadLinkPython}
-                    downloadLinkNode={detailedDocs.downloadLinkNode}
-                    downloadLinkPhp={detailedDocs.downloadLinkPhp}
-                  />
+                  <Links downloadLinks={detailedDocs} />
                 </div>
               </div>
 
