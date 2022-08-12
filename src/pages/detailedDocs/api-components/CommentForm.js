@@ -11,10 +11,7 @@ const CommentForm = ({ docId, user }) => {
 
         try {
             const url = `https://auth-wiki-team10.herokuapp.com/api/comments/`
-            //1. Get accessToken from localstorage
             const token = JSON.parse(localStorage.getItem("authTokens"))
-            //return console.log(token.accessToken)
-            //2. Do the request
 
             const response = await axios({
                 method: "POST",

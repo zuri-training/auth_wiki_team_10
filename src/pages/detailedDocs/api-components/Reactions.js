@@ -13,11 +13,7 @@ const Reactions = ({ docId, likes, disLikes }) => {
     const handleLike = async () => {
         try {
             const url = `https://auth-wiki-team10.herokuapp.com/api/reactions/`
-            //1. Get accessToken from localstorage
             const token = JSON.parse(localStorage.getItem("authTokens"))
-            //return console.log(token.accessToken)
-            //2. Do the request
-
             const response = await axios({
                 method: "POST",
                 url,
@@ -36,10 +32,7 @@ const Reactions = ({ docId, likes, disLikes }) => {
     const handleDislike = async () => {
         try {
             const url = `https://auth-wiki-team10.herokuapp.com/api/reactions/`
-            //1. Get accessToken from localstorage
             const token = JSON.parse(localStorage.getItem("authTokens"))
-            //return console.log(token.accessToken)
-            //2. Do the request
 
             const response = await axios({
                 method: "POST",
