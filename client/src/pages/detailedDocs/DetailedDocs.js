@@ -85,7 +85,7 @@ const DetailedDocs = () => {
                 <h1>Download Code sample</h1>
                 <p>Get a copy of the Authentication code for personal use anytime for the three languages.</p>
                 <div className="downloadLinks">
-                  <Links />
+                  <Links downloadLink={detailedDocs.downloadLink} />
                 </div>
               </div>
 
