@@ -37,21 +37,31 @@ export class Doc {
   @Column({ default: 0 })
   disLikes: number;
 
-  @Column({ default: '' })
-  downloadLink: string;
+  @Column({ default: ' ' })
+  downloadLinkPython: string;
+
+  @Column({ default: ' ' })
+  downloadLinkNode: string;
+
+  @Column({ default: ' ' })
+  downloadLinkPhp: string;
 
   constructor(
     title: string,
     description: string,
     author: User,
     blocks: Block[],
-    downloadLink: string,
   ) {
     this.title = title;
     this.description = description;
     this.author = author;
     this.blocks = blocks;
-    this.downloadLink = downloadLink;
+    this.downloadLinkPython =
+      'https://drive.google.com/file/d/1Nqq7ZX7XeSyJhlkBEhv710aqK4gvlhDF/view?usp=sharing';
+    this.downloadLinkPhp =
+      'https://drive.google.com/file/d/1Nqq7ZX7XeSyJhlkBEhv710aqK4gvlhDF/view?usp=sharing';
+    this.downloadLinkNode =
+      'https://drive.google.com/file/d/1Nqq7ZX7XeSyJhlkBEhv710aqK4gvlhDF/view?usp=sharing';
   }
 }
 

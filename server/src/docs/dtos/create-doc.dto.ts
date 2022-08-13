@@ -11,7 +11,4 @@ export class CreateDocDto {
   @IsNotEmpty()
   @IsArray()
   blocks: [Block];
-
-  @IsNotEmpty()
-  downloadLink: string;
 }
