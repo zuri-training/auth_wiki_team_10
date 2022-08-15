@@ -11,12 +11,14 @@ In this project, we're building an Wiki Platform that has authentication codes t
 - **[Backend:](https://github.com/zuri-training/auth_wiki_team_10/tree/dev/server)** Backend code is found in the `server` directory.
 
 ## Project Links
-### [Live site](http://authwikiteam10.zurifordummies.com)
-### 1. Designs
+### 1. Live site links
+- [Frontend](https://team-10-auth-wiki.herokuapp.com/)
+- [Backend](https://auth-wiki-team10.herokuapp.com/)
+### 2. Designs
 - [Figma Board](https://www.figma.com/file/rim5Uin1lkaLl0JD5rhcf5/Zuri-Project-File)
 - [User Research (Figjam)](https://www.figma.com/file/S2PHA3zmeX0YrjdURVvc1T/User-Flow-and-Persona?node-id=0%3A1) 
 - [Research Plan](https://docs.google.com/document/u/0/d/1YRUBBkxGBJi_lNgeBntg_zOmapn0gqi5e-P8YZ8k3ak/mobilebasic)
-### 2. Documentation
+### 3. Documentation
 - [Project documentation](https://docs.google.com/document/d/1vswXvU9SjDjTG-34QuhMQ_pX05lj7TdO/edit#heading=h.svoqst64okpq)
 - [Database Schema](https://docs.google.com/spreadsheets/d/1Tn5aYu6MFRDppOPCk2VuhTilhq3aTgEXK4bIwFi9drk/edit#gid=0)
 
