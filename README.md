@@ -1,4 +1,4 @@
-# [Auth Wiki Project.](http://authwikiteam10.zurifordummies.com)
+# [Auth Wiki Project.](https://team-10-auth-wiki.herokuapp.com/)
 # Team 10
 Codebase for Authe Wiki - Team 10
 <br>
