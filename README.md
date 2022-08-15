@@ -22,7 +22,7 @@ In this project, we're building an Wiki Platform that has authentication codes t
 - [Project documentation](https://docs.google.com/document/d/1vswXvU9SjDjTG-34QuhMQ_pX05lj7TdO/edit#heading=h.svoqst64okpq)
 - [Database Schema](https://docs.google.com/spreadsheets/d/1Tn5aYu6MFRDppOPCk2VuhTilhq3aTgEXK4bIwFi9drk/edit#gid=0)
 
-## How to run in production.
+## How to run code.
 ### 1. Frontend
 - `cd` to the `client` folder and run `npm i` to install all dependencies.
 - Run `npm run build` to build the React production making it ready for the production server.
